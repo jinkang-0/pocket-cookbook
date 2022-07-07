@@ -1,0 +1,89 @@
+
+/* formatting */
+
+.container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 45% 55%;
+    background-image: url('../assets/main_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 8%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.menu {
+    grid-column: 2;
+}
+
+
+
+/* title */
+
+h1.title {
+    font-family: 'Poiret One', cursive;
+    font-size: 6rem;
+    font-weight: normal;
+    text-align: right;
+    margin: 7% 25% 0 auto;
+}
+
+/* options */
+
+.options {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 25% 0 auto;
+    text-align: right;
+}
+
+a.optionLink {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: normal;
+    font-size: 2rem;
+    transition: 100ms;
+    color: black;
+    text-decoration: none;
+}
+
+.option:hover > a.optionLink {
+    transform: translate(-2rem);
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 1fr 1rem;
+    gap: 1rem;
+    padding: .5rem 0;
+    cursor: pointer;
+}
+
+.option > div {
+    position: relative;
+    background: black;
+    width: .75rem;
+    height: .75rem;
+    margin: auto;
+    transform: rotate(45deg);
+    display: grid;
+    place-items: center;
+}
+
+.option > div::after {
+    content: '';
+    background: white;
+    width: .41rem;
+    height: .41rem;
+    position: absolute;
+    display: none;
+}
+
+.option:hover > div::after {
+    display: block;
+}
+
+
+
+

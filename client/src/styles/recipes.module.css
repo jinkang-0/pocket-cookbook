@@ -1,0 +1,163 @@
+/* body spacing */
+
+.container {
+    display: grid;
+    padding: 4rem 12rem;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+}
+
+.sidebar {
+    background: var(--alternate);
+    /* border: 1px solid black; */
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, .25);
+}
+
+
+/* filter options */
+
+.sidebar > div {
+    margin: 1.5rem;
+}
+
+.sidebar > div > h3 {
+    font-size: 1.15rem;
+}
+
+.sidebar > div > label {
+    cursor: pointer;
+    display: block;
+}
+
+.sidebar > div input[type="radio"],
+.sidebar > div input[type="checkbox"] {
+    appearance: none;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 3px;
+    background-color: var(--unchecked);
+    cursor: pointer;
+    transform: rotate(45deg);
+    margin-right: .5rem;
+}
+
+.sidebar > div input[type="radio"]:checked,
+.sidebar > div input[type="checkbox"]:checked {
+    background-color: var(--footer);
+}
+
+
+/* search bar */
+
+.search {
+    height: 2.5rem;
+    display: flex;
+}
+
+.search > input[type="text"] {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    margin-right: 1rem;
+    border: none;
+    background: #f6f6f6;
+    outline: none;
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, .25);
+    padding: 0 1rem;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+}
+
+.search > input[type="text"]:focus {
+    filter: brightness(.985);
+}
+
+.search > input[type="text"]::selection {
+    background: lightblue;
+}
+
+.search > button {
+    height: 100%;
+    margin-left: auto;
+    padding: .5rem;
+    border: none;
+    background: var(--background);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    border-radius: 5px;
+}
+
+.search > button > svg {
+    height: 100%;
+    width: auto;
+}
+
+
+/* recipes */
+
+.recipes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.recipe {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    transition: 100ms;
+    gap: 1rem;
+}
+
+.recipe:hover {
+    box-shadow: 0 11px 24px rgba(0, 0, 0, .25);
+}
+
+.recipe .imgContainer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.recipe .imgContainer::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.recipe img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1rem;
+    user-select: none;
+}
+
+.recipe > div.details {
+    margin-top: 1rem;
+}
+
+.recipe h3 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.recipe p {
+    font-size: 1rem;
+    width: 80%;
+}
+
+.recipe button {
+    background: var(--secondary);
+    border: none;
+    outline: none;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+

@@ -1,0 +1,257 @@
+/* banner */
+
+.banner {
+    width: 100%;
+    background: #E7F1F1;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.banner > p {
+    padding: 1rem;
+}
+
+.banner > a {
+    background: var(--secondary);
+    outline: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .25);
+    cursor: pointer;
+    margin: .75rem;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+}
+
+
+/* main body container */
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+
+/* filter selection options */
+
+.options {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    width: 75%;
+    display: flex;
+    padding: 2rem 3rem;
+    user-select: none;
+}
+
+.options > div {
+    margin: 0 2rem;
+}
+
+.options h3 {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: .1rem;
+}
+
+.options label {
+    cursor: pointer;
+    display: block;
+}
+
+.options input[type="radio"],
+.options input[type="checkbox"] {
+    appearance: none;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 3px;
+    background-color: var(--unchecked);
+    cursor: pointer;
+    transform: rotate(45deg);
+    margin-right: .5rem;
+}
+
+.options input[type="radio"]:checked,
+.options input[type="checkbox"]:checked {
+    background-color: var(--footer);
+}
+
+
+/* filter & search bar */
+
+.filter {
+    width: 75%;
+    height: 2rem;
+    display: flex;
+    margin: 2rem 0;
+}
+
+.filter svg {
+    height: 100%;
+    cursor: pointer;
+}
+
+.filter input {
+    flex: 2;
+    margin-right: 2rem;
+    background: #F6F6F6;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .25);
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0 1rem;
+    transition: 100ms;
+}
+
+.filter input::selection {
+    background: lightblue;
+}
+
+.filter input:focus {
+    filter: brightness(.985);
+}
+
+.filter button {
+    background: var(--secondary);
+    outline: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    padding: 0 1rem;
+    font-size: 1rem;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+
+/* recipes */
+
+.recipes {
+    width: 75%;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 8rem;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    position: relative;
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.recipe:hover {
+    box-shadow: 0 11px 24px rgba(0, 0, 0, .25);
+}
+
+.recipe h4 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.recipe > div {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 1fr 1rem 1rem;
+    width: 100%;
+}
+
+.recipe .imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+.recipe .imgContainer::after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.recipe img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: .25rem solid black;
+    user-select: none;
+}
+
+.recipe svg {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0;
+}
+
+.recipe .diet {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 1.5rem;
+}
+
+.recipe .allergens {
+    display: flex;
+    padding-left: 1.5rem;
+    height: 1.3rem;
+}
+
+.recipe .heat {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 3;
+    padding-right: 1.5rem;
+}
+
+.recipe .tags {
+    display: flex;
+    justify-content: center;
+}
+
+.recipe .tags span {
+    background: #BAE7F5;
+    padding: .1rem .75rem;
+    font-weight: 500;
+    margin: 0 .5rem;
+}
+
+.recipe p {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe .check {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+
+.recipe.selected {
+    background: #ECF2F4;
+}
+

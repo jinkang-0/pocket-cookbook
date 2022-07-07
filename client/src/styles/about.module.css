@@ -1,0 +1,69 @@
+/* website intro */
+
+.intro {
+    width: 100%;
+    padding: 14rem 4rem;
+    text-align: center;
+}
+
+.intro h1 {
+    font-weight: normal;
+    font-size: 3.5rem;
+    opacity: 0;
+    animation: fade-and-drop 1s .2s forwards;
+}
+
+.intro p {
+    padding: 2rem;
+    width: 40%;
+    margin: auto;
+    opacity: 0;
+    animation: fade-and-drop 1s forwards;
+}
+
+
+/* profile section */
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1rem 1fr;
+    padding: 0 10rem;
+    gap: 2rem 4rem;
+    margin-bottom: 10rem;
+}
+
+.profile img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.profile h3 {
+    font-size: 2rem;
+}
+
+.profile span {
+    font-size: 1.1rem;
+    width: 80%;
+}
+
+
+/* animations */
+
+@keyframes fade-and-drop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+

@@ -1,0 +1,241 @@
+/* main body containers */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container > h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+
+/* form */
+
+.form {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+    width: 45%;
+    margin: 2rem 0;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form label {
+    font-size: 1.15rem;
+    font-weight: 500;
+    display: block;
+    padding-bottom: .5rem;
+}
+
+
+/* text field */
+
+.form input[type="text"] {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 0 lightgray;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: 100ms;
+}
+
+.form input[type="text"]:focus {
+    box-shadow: 0 2px 0 gray;
+}
+
+
+/* select field */
+
+.form > div > section {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+}
+
+.form > div > section > select {
+    appearance: none;
+    background: var(--alternate);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    margin: .5rem 0;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+    padding: .25rem .5rem;
+    width: 100%;
+    grid-area: select;
+}
+
+.form > div > section::after {
+    content: '';
+    display: block;
+    width: .8rem;
+    height: .7rem;
+    background: var(--footer);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    position: absolute;
+    grid-area: select;
+    justify-self: end;
+    margin: 0 .5rem;
+}
+
+
+/* checkbox list */
+
+.form > div > div label {
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    margin: .1rem 0;
+    font-weight: normal;
+}
+
+.form > div > div input[type="checkbox"] {
+    appearance: none;
+    width: .65rem;
+    height: .65rem;
+    border-radius: 3px;
+    background-color: var(--unchecked);
+    cursor: pointer;
+    transform: rotate(45deg);
+    margin-right: .5rem;
+}
+
+.form > div > div input[type="checkbox"]:checked {
+    background-color: var(--footer);
+}
+
+
+/* ingredient field */
+
+.addIngredient {
+    display: flex;
+    flex-direction: column;
+}
+
+.addIngredient > ul > li:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.addIngredient > div {
+    display: flex;
+    gap: 1rem;
+    margin: .5rem 0;
+}
+
+.addIngredient input[type="number"] {
+    box-shadow: 0 2px 0 lightgray;
+    background: none;
+    outline: none;
+    border: none;
+    width: 2rem;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: 100ms;
+}
+
+.addIngredient input[type="number"]::-webkit-outer-spin-button,
+.addIngredient input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.addIngredient input[type="number"]:focus {
+    box-shadow: 0 2px 0 gray;
+}
+
+.addIngredient input[type="text"] {
+    display: inline-block;
+}
+
+.addIngredient .selectBox {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    width: 7rem;
+}
+
+.addIngredient .selectBox > select {
+    appearance: none;
+    background: var(--alternate);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+    width: auto;
+    padding: 0 .5rem;
+    grid-area: select;
+    text-align: left;
+}
+
+.addIngredient .selectBox::after {
+    content: '';
+    display: block;
+    width: .5rem;
+    height: .4rem;
+    background: var(--footer);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    position: absolute;
+    grid-area: select;
+    justify-self: end;
+    margin: 0 .5rem;
+}
+
+.addIngredient button {
+    background: var(--background);
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+    padding: .25rem 1rem;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    margin-bottom: .5rem;
+    transition: 100ms;
+}
+
+.addIngredient button:hover {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .25);
+}
+
+
+
+/* list field */
+
+.form ul,
+.form ol {
+    margin-left: 1.5rem;
+}
+
+.form ul li,
+.form ol li {
+    margin: .5rem 0;
+}
+
+
+/* submit button */
+
+.form input[type="submit"] {
+    font-size: 1.25rem;
+    font-weight: normal;
+    font-family: 'Quicksand', sans-serif;
+    background: var(--secondary);
+    border: none;
+    outline: none;
+    width: auto;
+    padding: .15rem 3rem;
+    margin: 1rem auto;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+}
