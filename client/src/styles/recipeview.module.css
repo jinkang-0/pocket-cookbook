@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem 15vw;
+    padding: 4rem 20vw;
 }
 
 
@@ -16,6 +16,7 @@
     grid-template-columns: 2fr 3fr;
     gap: 4rem;
     margin: 2rem 0;
+    width: 100%;
 }
 
 
@@ -53,6 +54,12 @@
     font-weight: normal;
     font-size: 3rem;
     font-family: 'Dancing Script', cursive;
+    display: flex;
+}
+
+.intro h1 svg {
+    width: 2rem;
+    margin-left: 1rem;
 }
 
 .intro span {
@@ -75,17 +82,20 @@
     flex-direction: column;
     margin: 2rem;
     margin-right: auto;
-    gap: 3rem;
+}
+
+.body div {
+    margin: 1.5rem 0;
 }
 
 .body h2 {
     font-weight: normal;
     font-size: 2rem;
+    margin-bottom: .5rem;
 }
 
 .body ul,
 .body ol {
-    margin: .5rem 0;
     margin-left: 1.5rem;
 }
 
@@ -98,3 +108,44 @@
     margin: .5rem 0;
 }
 
+.body p {
+    font-size: 1.15rem;
+}
+
+
+
+/* specifics */
+
+.prep {
+    position: relative;
+}
+
+.prep svg {
+    position: absolute;
+    width: 2rem;
+    top: -.5rem;
+    left: -2.5rem;
+}
+
+
+/* extra info */
+
+.body .allergens,
+.body .heat {
+    display: flex;
+    align-items: center;
+    margin: .5rem 0;
+}
+
+.allergens h4,
+.heat h4 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-right: .5rem;
+}
+
+.allergens svg,
+.heat svg {
+    width: 1.5rem;
+    height: auto;
+}

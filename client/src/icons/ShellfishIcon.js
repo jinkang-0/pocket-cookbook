@@ -1,6 +1,6 @@
 import React from "react";
 
-function Shellfish() {
+function ShellfishIcon() {
     return (
         <svg
             width="63"
@@ -36,4 +36,4 @@ function Shellfish() {
     );
 }
 
-export default Shellfish;
+export default ShellfishIcon;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Soy() {
+function SoyIcon() {
     return (
         <svg
             width="63"
@@ -35,4 +35,4 @@ function Soy() {
     );
 }
 
-export default Soy;
+export default SoyIcon;

@@ -4,7 +4,7 @@ const recipeRoutes = express.Router();
 const dbo = require('../db/connect');
 
 // get requests
-recipeRoutes.route('/recipes/:id').get((req, res) => {
+recipeRoutes.route('/recipes/:id').get(async (req, res) => {
     const db = dbo.getDb();
     const id = ObjectId(req.params.id);
     await db.collection('recipes').findOne({ _id: id }, (err, data) => {

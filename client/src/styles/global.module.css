@@ -113,6 +113,14 @@ footer a {
     height: 100%;
     display: grid;
     place-items: center;
+    outline: none;
+    padding: 0 .15rem;
+}
+
+footer a:focus,
+footer a:hover {
+    background: #4e3c71;
+    box-shadow: 0 0 7px var(--alternate);
 }
 
 footer svg {

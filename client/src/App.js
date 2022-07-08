@@ -6,9 +6,10 @@ import RecipesPage from "./pages/RecipesPage";
 import RecipeViewPage from "./pages/RecipeViewPage";
 import AboutPage from "./pages/AboutPage";
 import AddRecipePage from "./pages/AddRecipePage";
+import BatchSelectPage from "./pages/BatchSelectPage";
+import ErrorPage from "./pages/ErrorPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import BatchSelectPage from "./pages/BatchSelectPage";
 import './styles/global.module.css';
 
 function App() {
@@ -68,9 +69,10 @@ function App() {
                 <Route path="/planning" exact element={<PlanningPage recipes={recipes} />} />
                 <Route path="/recipes" exact element={<RecipesPage recipes={recipes} />} />
                 <Route path="/recipes/add" exact element={<AddRecipePage />} />
-                <Route path="/recipes/view" exact element={<RecipeViewPage recipe={recipes[1]} />} />
+                <Route path="/recipes/view/:id" element={<RecipeViewPage recipe={recipes[1]} />} />
                 <Route path="/planning/batch" exact element={<BatchSelectPage recipes={recipes} />} />
                 <Route path="/about" exact element={<AboutPage />} />
+                <Route path="/error" exact element={<ErrorPage />} />
             </Routes>
 
             <Footer />

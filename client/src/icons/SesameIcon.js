@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sesame() {
+function SesameIcon() {
     return (
         <svg
             width="63"
@@ -17,4 +17,4 @@ function Sesame() {
     );
 }
 
-export default Sesame;
+export default SesameIcon;
