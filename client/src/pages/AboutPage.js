@@ -5,17 +5,20 @@ function AboutPage() {
     return (
         <>
             <header className={styles.intro}>
-                <h1>Alias nisi, saepe illo.</h1>
+                <h1>Recipes, made convenient</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quod repellendus accusantium ad rem! Rem dicta blanditiis soluta nam quisquam corporis, numquam quae officia facilis similique deleniti voluptas reiciendis alias.
+                    With the use of filters, search, and customization, recipe searching becomes a whole lot easier. View public recipes, or run it locally to manage your personal recipes and make life easier.
                 </p>
             </header>
 
             <section className={styles.profile}>
-                <img src="https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg" alt="profile" />
-                <h3>Autem modi</h3>
+                <div className={styles.imgContainer}>
+                    <img src="assets/profile.jpg" alt="profile" />
+                </div>
+                <h3>Jinkang Fang</h3>
                 <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quasi officiis totam qui iusto molestiae porro temporibus quae quia. Nesciunt expedita temporibus harum quidem, laudantium facilis eum nemo incidunt nam laboriosam! Ullam placeat voluptatum praesentium ducimus. Itaque vel quidem odit provident, a nihil dignissimos tempore blanditiis, numquam aperiam voluptas amet?
+                    I made this website as a passion project to help me sort through the numerous recipes I will inevitably pile up in the future.
+                    It started off as a design on Figma, then transformed into this using a MERN stack when my free time got out of hand over the summer.
                 </span>
             </section>
         </>

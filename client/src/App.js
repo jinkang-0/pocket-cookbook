@@ -67,9 +67,9 @@ function App() {
                 <Route path="/" exact element={<MenuPage />} />
                 <Route path="/planning" exact element={<PlanningPage recipes={recipes} />} />
                 <Route path="/recipes" exact element={<RecipesPage recipes={recipes} />} />
+                <Route path="/recipes/add" exact element={<AddRecipePage />} />
                 <Route path="/recipes/view" exact element={<RecipeViewPage recipe={recipes[1]} />} />
                 <Route path="/planning/batch" exact element={<BatchSelectPage recipes={recipes} />} />
-                <Route path="/add" exact element={<AddRecipePage />} />
                 <Route path="/about" exact element={<AboutPage />} />
             </Routes>
 

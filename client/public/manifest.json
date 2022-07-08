@@ -3,7 +3,7 @@
   "name": "Pocket Cookbook",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "/assets/favicon.png",
       "type": "image/png",
       "sizes": "200x200"
     }

@@ -1,9 +1,16 @@
 import React from "react";
 
-function ListItem({ id, name, onkeydown, required }) {
+function ListItem({ id, onkeydown, onChange }) {
+
+    // by Martin Prestone on StackOverflow
+    function adjustSize(e) {
+        e.target.style.height = "";
+        e.target.style.height = e.target.scrollHeight + "px";
+    }
+
     return (
         <li>
-            <input id={id} className="listItem" type="text" name={name} onKeyDown={onkeydown} required={required} />
+            <textarea id={id} onChange={onChange} onKeyDown={onkeydown} onInput={adjustSize} spellCheck={false} />
         </li>
     );
 }

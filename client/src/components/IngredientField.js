@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import IngredientItem from "./IngredientItem";
 import styles from "../styles/addrecipe.module.css";
 
-function IngredientField({ label }) {
+function IngredientField({ label, required, onChange }) {
 
     const [ ingredients, setIngredients ] = useState([]);
     const componentId = uuidv4();
@@ -18,20 +18,38 @@ function IngredientField({ label }) {
         if (!name.value)
             return;
 
+        // update ingredients
+        var newIngredients;
         if (!quantity.value)
-            setIngredients([...ingredients, {
+            newIngredients = [...ingredients, {
                 name: name.value,
-                quantity: 0,
-                units: 'null',
                 id: uuidv4()
-            }]);
+            }];
+        else if (quantity.value && !units.value)
+            newIngredients = [...ingredients, {
+                name: name.value,
+                quantity: quantity.value,
+                id: uuidv4()
+            }];
         else if (quantity.value && units.value)
-            setIngredients([...ingredients, {
+            newIngredients = [...ingredients, {
                 name: name.value,
                 quantity: quantity.value,
                 units: units.value,
                 id: uuidv4()
-            }]);
+            }];
+
+        setIngredients(newIngredients);
+
+        // update form
+        const uploadableIngredients = newIngredients.map(i => {
+            return {
+                name: i.name,
+                quantity: i.quantity,
+                units: i.units
+            }
+        })
+        onChange(uploadableIngredients);
 
         // clear values
         name.value = '';
@@ -42,9 +60,11 @@ function IngredientField({ label }) {
         setIngredients(filteredIngredients);
     }
 
+    const classname = (required) ? styles.required : "";
+
     return (
         <div className={styles.addIngredient}>
-            <label htmlFor={`${componentId}quantity`}>{label}</label>
+            <label htmlFor={`${componentId}quantity`} className={classname}>{label}</label>
             {(ingredients.length > 0) && (
                 <ul>
                     {ingredients.map(i => {
@@ -53,9 +73,10 @@ function IngredientField({ label }) {
                 </ul>
             )}
             <div>
-                <input type="number" id={`${componentId}quantity`} />
+                <input type="number" id={`${componentId}quantity`} placeholder="1" />
                 <div className={styles.selectBox}>
                     <select id={`${componentId}units`}>
+                        <option value="">  </option>
                         <option value="cup">cup</option>
                         <option value="tsp">tsp</option>
                         <option value="tbs">tbs</option>
@@ -63,14 +84,14 @@ function IngredientField({ label }) {
                         <option value="g">g</option>
                         <option value="lb">lb</option>
                         <option value="oz">oz</option>
-                        <option value="pint">pint</option>
-                        <option value="quart">quart</option>
-                        <option value="gallon">gallon</option>
+                        <option value="pt">pint</option>
+                        <option value="qt">quart</option>
+                        <option value="gal">gallon</option>
                         <option value="mL">mL</option>
                         <option value="L">L</option>
                     </select>
                 </div>
-                <input type="text" id={`${componentId}name`} />
+                <input type="text" id={`${componentId}name`} onKeyDown={e => {(e.key === 'Enter') && addIngredient(e)}} placeholder="minced garlic"/>
             </div>
             <div>
                 <button onClick={addIngredient}>Add Item</button>

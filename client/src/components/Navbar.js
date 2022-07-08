@@ -14,15 +14,15 @@ function Navbar() {
                 <ChefHatIcon />
             </Link>
             {(location.pathname.startsWith("/planning")) ?
-                <Link className={styles.selected} to="#">Planning</Link> :
+                <Link className={styles.selected} to="/planning">Planning</Link> :
                 <Link to="/planning">Planning</Link>
             }
             {(location.pathname.startsWith("/recipes")) ?
-                <Link className={styles.selected} to="#">Recipes</Link> :
+                <Link className={styles.selected} to="/recipes">Recipes</Link> :
                 <Link to="/recipes">Recipes</Link>
             }
             {(location.pathname.startsWith("/about")) ?
-                <Link className={styles.selected} to="#">About</Link> :
+                <Link className={styles.selected} to="/about">About</Link> :
                 <Link to="/about">About</Link>
             }
         </nav>

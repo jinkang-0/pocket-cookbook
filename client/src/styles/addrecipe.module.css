@@ -36,6 +36,19 @@
 }
 
 
+/* errors */
+
+.errors > p {
+    color: darkred;
+}
+
+.errors > p::before {
+    content: '*';
+    color: red;
+    margin-right: .5rem;
+}
+
+
 /* text field */
 
 .form input[type="text"] {
@@ -50,6 +63,96 @@
 }
 
 .form input[type="text"]:focus {
+    box-shadow: 0 2px 0 gray;
+}
+
+
+/* number-select */
+
+.numberselect {
+    display: flex;
+}
+
+.numberselect input[type="number"] {
+    box-shadow: 0 2px 0 lightgray;
+    background: none;
+    outline: none;
+    border: none;
+    width: 50%;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: 100ms;
+    margin: auto 0;
+    margin-right: 1rem;
+}
+
+.numberselect input[type="number"]:focus {
+    box-shadow: 0 2px 0 gray;
+}
+
+.numberselect input[type="number"]::-webkit-outer-spin-button,
+.numberselect input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.numberselect select {
+    appearance: none;
+    background: var(--alternate);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    margin: .5rem 0;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+    padding: .25rem .5rem;
+    padding-right: 2rem;
+    width: 100%;
+    grid-area: select;
+}
+
+.numberselect > div {
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+    width: auto;
+}
+
+.numberselect > div::after {
+    content: '';
+    display: block;
+    width: .8rem;
+    height: .7rem;
+    background: var(--footer);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    position: absolute;
+    grid-area: select;
+    justify-self: end;
+    margin: 0 .5rem;
+}
+
+
+/* textarea */
+
+.form textarea {
+    width: 100%;
+    height: 1.25rem;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 0 lightgray;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    transition: box-shadow 100ms;
+    overflow: auto;
+    resize: none;
+}
+
+.form textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.form textarea:focus {
     box-shadow: 0 2px 0 gray;
 }
 
@@ -87,6 +190,47 @@
     grid-area: select;
     justify-self: end;
     margin: 0 .5rem;
+}
+
+
+/* multi select */
+
+.multiselect {
+    width: 100%;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+}
+
+.multiselect > button {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: .5rem .75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.multiselect > button:hover {
+    background: #f1eced;
+}
+
+.multiselect > button.selected {
+    background: var(--unchecked);
+}
+
+.multiselect > button.selected:hover {
+    filter: brightness(.98);
+}
+
+.multiselect > button > svg {
+    height: 1.25rem;
+    width: auto;
 }
 
 
@@ -145,18 +289,26 @@
     transition: 100ms;
 }
 
+.addIngredient input[type="number"]:focus {
+    box-shadow: 0 2px 0 gray;
+}
+
 .addIngredient input[type="number"]::-webkit-outer-spin-button,
 .addIngredient input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-.addIngredient input[type="number"]:focus {
-    box-shadow: 0 2px 0 gray;
+.addIngredient input[type="number"]::placeholder {
+    color: lightgray;
 }
 
 .addIngredient input[type="text"] {
     display: inline-block;
+}
+
+.addIngredient input[type="text"]::placeholder {
+    color: lightgray;
 }
 
 .addIngredient .selectBox {
@@ -227,7 +379,7 @@
 
 /* submit button */
 
-.form input[type="submit"] {
+.form > button {
     font-size: 1.25rem;
     font-weight: normal;
     font-family: 'Quicksand', sans-serif;
@@ -238,4 +390,19 @@
     padding: .15rem 3rem;
     margin: 1rem auto;
     box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    cursor: pointer;
+    transition: 100ms;
+}
+
+.form > button:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, .25);
+}
+
+
+/* required labels */
+
+.required::after {
+    content: '*';
+    color: red;
+    margin-left: .5rem;
 }

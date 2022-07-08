@@ -1,12 +1,14 @@
 import React from "react";
 
 function IngredientItem({ ingredient, handleClick }) {
+
+    var content = `${ingredient.quantity} ${ingredient.units} ${ingredient.name}`;
+    if (!ingredient.units)
+        content = (ingredient.quantity) ? `${ingredient.quantity} ${ingredient.name}` : `${ingredient.name}`;
+
     return (
         <>
-            {(ingredient.units === "null") ?
-                <li id={ingredient.id} onClick={handleClick}>{ingredient.name}</li> :
-                <li id={ingredient.id} onClick={handleClick}>{ingredient.quantity} {ingredient.units} {ingredient.name} </li>
-            }
+            <li id={ingredient.id} onClick={handleClick}>{content}</li>
         </>
     );
 }
