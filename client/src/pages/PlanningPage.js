@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/planning.module.css";
 import Option from "../components/Option";
 import SearchBar from '../components/SearchBar.js';
-import Recipe from '../components/Recipe.js';
+import SelectableRecipe from '../components/SelectableRecipe.js';
 
 const options = [
     {
@@ -29,26 +29,20 @@ const options = [
     }
 ];
 
-function PlanningPage({ recipes }) {
+function PlanningPage() {
 
     const [selected, setSelected] = useState([]);
+    const [recipes, setRecipes] = useState([]);
 
-    // useEffect(() => {
-    //     async function testCall() {
-    //         const response = await fetch("http://localhost:5000/test");
-        
-    //         if (!response.ok) {
-    //             window.alert(`Error: ${response.statusText}`);
-    //             return;
-    //         }
-        
-    //         console.log(response);
-    //     }
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('http://localhost:5000/recipes');
+            const data = await res.json();
+            setRecipes(data);
+        }
 
-    //     testCall();
-
-    //     return;
-    // }, []);
+        fetchData();
+    }, []);
 
     return (
         <div className={styles.container}>
@@ -70,7 +64,7 @@ function PlanningPage({ recipes }) {
             </div>
             <div className={styles.recipes}>
                 {recipes.map(r => {
-                    return <Recipe key={uuidv4()} recipe={r} selected={selected} setSelected={setSelected} />
+                    return <SelectableRecipe key={uuidv4()} recipe={r} selected={selected} setSelected={setSelected} />
                 })}
             </div>
         </div>

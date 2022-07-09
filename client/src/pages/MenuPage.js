@@ -9,18 +9,18 @@ function MenuPage() {
             <h1 className={styles.title}>Pocket Cookbook</h1>
 
             <div className={styles.options}>
-                <div className={styles.option} id="planning">
-                    <Link className={styles.optionLink} to="/planning">Planning</Link>
+                <Link to="/planning" className={styles.option} id="planning">
+                    <p className={styles.optionLink}>Planning</p>
                     <div></div>
-                </div>
-                <div className={styles.option} id="recipes">
-                    <Link className={styles.optionLink} to="/recipes">Recipes</Link>
+                </Link>
+                <Link to="/recipes" className={styles.option} id="recipes">
+                    <p className={styles.optionLink}>Recipes</p>
                     <div></div>
-                </div>
-                <div className={styles.option} id="about">
-                    <Link className={styles.optionLink} to="/about">About</Link>
+                </Link>
+                <Link to="/about" className={styles.option} id="about">
+                    <p className={styles.optionLink}>About</p>
                     <div></div>
-                </div>
+                </Link>
             </div>
         </div>
     </div>

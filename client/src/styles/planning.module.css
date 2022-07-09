@@ -174,16 +174,19 @@
     margin-bottom: .5rem;
 }
 
-.recipe > div {
+.recipe .details {
     display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: 1fr 1rem 1rem;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 1rem;
     width: 100%;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .recipe .imgContainer {
     position: relative;
     width: 100%;
+    grid-column: 3 / 6;
 }
 
 .recipe .imgContainer::after {
@@ -211,20 +214,20 @@
 .recipe .diet {
     display: flex;
     align-items: flex-end;
-    padding-left: 1.5rem;
+    grid-column: 1 / 3;
 }
 
 .recipe .allergens {
     display: flex;
-    padding-left: 1.5rem;
     height: 1.3rem;
+    grid-column: 1 / 4;
+    grid-row: 2;
 }
 
 .recipe .heat {
     display: flex;
     justify-content: flex-end;
-    grid-column: 3;
-    padding-right: 1.5rem;
+    grid-column: 5 / 8;
 }
 
 .recipe .tags {
@@ -233,7 +236,7 @@
 }
 
 .recipe .tags span {
-    background: #BAE7F5;
+    background: var(--tag);
     padding: .1rem .75rem;
     font-weight: 500;
     margin: 0 .5rem;

@@ -60,6 +60,10 @@ function RecipeViewPage() {
         fetchData();
     }, [params.id, navigate]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     // by Martin R on StackOverflow
     function getlowestfraction(x0) {
         var eps = 1.0E-15;

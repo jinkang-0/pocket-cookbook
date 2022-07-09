@@ -39,7 +39,7 @@ h1.title {
     text-align: right;
 }
 
-a.optionLink {
+.optionLink {
     font-family: 'Cormorant Garamond', serif;
     font-weight: normal;
     font-size: 2rem;
@@ -48,7 +48,7 @@ a.optionLink {
     text-decoration: none;
 }
 
-.option:hover > a.optionLink {
+.option:hover > .optionLink {
     transform: translate(-2rem);
 }
 
@@ -58,6 +58,7 @@ a.optionLink {
     gap: 1rem;
     padding: .5rem 0;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .option > div {

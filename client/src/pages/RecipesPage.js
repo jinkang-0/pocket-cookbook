@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/recipes.module.css";
 import Option from "../components/Option";
@@ -8,45 +8,81 @@ import SearchIcon from "../icons/SearchIcon";
 import SimplifiedRecipe from "../components/SimplifiedRecipe";
 
 const options = [
-  {
-      group: "Meal",
-      options: ["Breakfast", "Lunch", "Dinner", "Beverage", "Dessert", "Snack"],
-      type: "checkbox"
-  },
-  {
-      group: "Allergens",
-      options: ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
-      type: "checkbox"
-  },
-  {
-      group: "Heat",
-      options: ["Any", "Low", "Medium", "High"],
-      type: "radio"
-  },
-  {
-      group: "Diet",
-      options: ["All", "Vegetarian", "Vegan"],
-      type: "radio"
-  }
+    {
+        group: "Meal",
+        options: [
+            "Breakfast",
+            "Lunch",
+            "Dinner",
+            "Beverage",
+            "Dessert",
+            "Snack"
+        ],
+        type: "checkbox"
+    },
+    {
+        group: "Allergens",
+        options: [
+            "Shellfish",
+            "Nuts",
+            "Wheat",
+            "Fish",
+            "Milk",
+            "Egg",
+            "Soy",
+            "Sesame"
+        ],
+        type: "checkbox"
+    },
+    {
+        group: "Heat",
+        options: ["Any", "Low", "Medium", "High"],
+        type: "radio"
+    },
+    {
+        group: "Diet",
+        options: ["All", "Vegetarian", "Vegan"],
+        type: "radio"
+    }
 ];
 
-function RecipesPage({ recipes }) {
+function RecipesPage() {
+
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('http://localhost:5000/recipes');
+            const r = await res.json();
+            setRecipes(r);
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <div className={styles.container}>
             <div className={styles.sidebar}>
-                {options.map(opt => {
-                  return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} />
+                {options.map((opt) => {
+                    return (
+                        <Option
+                            key={opt.group}
+                            group={opt.group}
+                            options={opt.options}
+                            type={opt.type}
+                        />
+                    );
                 })}
             </div>
             <div>
                 <div className={styles.search}>
-                  <SearchBar />
-                  <IconButton icon={<SearchIcon />} />
+                    <SearchBar />
+                    <IconButton icon={<SearchIcon />} />
                 </div>
                 <div className={styles.recipes}>
-                  {recipes.map(r => {
-                    return <SimplifiedRecipe key={uuidv4()} recipe={r} />
-                  })}
+                    {recipes.map((r) => {
+                        return <SimplifiedRecipe key={uuidv4()} recipe={r} />;
+                    })}
                 </div>
             </div>
         </div>

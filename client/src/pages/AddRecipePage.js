@@ -47,13 +47,15 @@ function AddRecipePage() {
             directions: !form.directions
         };
         
-        const erroneous = !Object.values(err).every(v => v);
+        const erroneous = !Object.values(err).every(v => !v);
         if (erroneous) {
             setError(err);
             if (sendToTop)
                 window.scrollTo(0, 0);
             return true;
         }
+
+        return false;
     }
 
     async function submitForm(e) {
@@ -112,7 +114,7 @@ function AddRecipePage() {
                 <SelectField label="Diet" required={true} options={["All", "Vegetarian", "Vegan"]} onChange={v => {updateForm({ diet: v })}} />
                 <SelectField label="Spice Level" required={true} options={["None", "Low", "Medium", "High", "Very High"]} onChange={v => {updateForm({ heat: v })}} />
                 <MultiSelectField label="Meal Type" required={true} options={["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup"]} onChange={v => {updateForm({ tags: v })}} />
-                <ChecklistField label="Contains These Allergens" options={["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soybeans", "Sesame"]} onChange={v => {updateForm({ allergens: v })}} />
+                <ChecklistField label="Contains These Allergens" options={["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"]} onChange={v => {updateForm({ allergens: v })}} />
                 <TextField label="Image URL" required={true} onChange={e => {updateForm({ img: e.target.value })}} />
                 <IngredientField label="Ingredients" required={true} onChange={v => {updateForm({ ingredients: v })}} />
                 <IngredientField label="Optional Ingredients" onChange={v => {updateForm({ optionalIngredients: v })}} />

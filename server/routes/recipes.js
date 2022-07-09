@@ -4,14 +4,24 @@ const recipeRoutes = express.Router();
 const dbo = require('../db/connect');
 
 // get requests
+recipeRoutes.route('/recipes').get(async (req, res) => {
+    const db = dbo.getDb();
+    const data = await db.collection('recipes').find().toArray();
+    res.json(data);
+})
+
 recipeRoutes.route('/recipes/:id').get(async (req, res) => {
     const db = dbo.getDb();
-    const id = ObjectId(req.params.id);
-    await db.collection('recipes').findOne({ _id: id }, (err, data) => {
-        if (err)
-            throw err;
-        res.json(data);
-    });
+    var id;
+    try { 
+        id = ObjectId(req.params.id)
+        await db.collection('recipes').findOne({ _id: id }, (err, data) => {
+            if (err)
+                throw err;
+            res.json(data);
+        });
+    }
+    catch { res.sendStatus(404) }
 });
 
 
