@@ -6,9 +6,9 @@ const dbo = require('../db/connect');
 // get requests
 recipeRoutes.route('/recipes').get(async (req, res) => {
     const db = dbo.getDb();
-    const data = await db.collection('recipes').find().toArray();
+    const data = await db.collection('recipes').find().sort({ name: 1 }).toArray();
     res.json(data);
-})
+});
 
 recipeRoutes.route('/recipes/:id').get(async (req, res) => {
     const db = dbo.getDb();

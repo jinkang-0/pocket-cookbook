@@ -6,32 +6,16 @@ import Option from "../components/Option";
 import SearchBar from '../components/SearchBar.js';
 import SelectableRecipe from '../components/SelectableRecipe.js';
 
-const options = [
-    {
-        group: "Meal",
-        options: ["Breakfast", "Lunch", "Dinner", "Beverage", "Dessert", "Snack"],
-        type: "checkbox"
-    },
-    {
-        group: "Allergens",
-        options: ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
-        type: "checkbox"
-    },
-    {
-        group: "Heat",
-        options: ["Any", "Low", "Medium", "High"],
-        type: "radio"
-    },
-    {
-        group: "Diet",
-        options: ["All", "Vegetarian", "Vegan"],
-        type: "radio"
-    }
-];
-
-function PlanningPage({ selected, setSelected }) {
+function PlanningPage({ selected, setSelected, filterOptions }) {
 
     const [recipes, setRecipes] = useState([]);
+    const [displayed, setDisplayed] = useState([]);
+    const [filters, setFilters] = useState({
+        "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"],
+        "Allergens": ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
+        "Heat": "Any",
+        "Diet": "All"
+    });
 
     useEffect(() => {
         async function fetchData() {
@@ -42,6 +26,41 @@ function PlanningPage({ selected, setSelected }) {
 
         fetchData();
     }, []);
+
+    useEffect(() => {
+        const filteredRecipes = recipes.filter(r => {
+            if (r.tags.some(t => !filters.Meal.includes(t)))
+                return false;
+            if (r.allergens && r.allergens.some(a => !filters.Allergens.includes(a)))
+                return false;
+            if (filters.Heat !== "Any" && filters.Heat !== r.heat)
+                return false;
+            if (filters.Diet !== "All" && filters.Diet !== r.diet)
+                return false;
+            return true;
+        });
+        setDisplayed(filteredRecipes);
+    }, [filters, recipes]);
+
+    function updateFilters(e) {
+        const grp = e.target.name;
+        const type = e.target.id;
+        var newObj;
+        if (grp === "Meal") {
+            const newVal = (filters.Meal.includes(type)) ? filters.Meal.filter(f => f !== type) : [...filters.Meal, type];
+            newObj = { Meal: newVal };
+        } else if (grp === "Allergens") {
+            const newVal = (filters.Allergens.includes(type)) ? filters.Allergens.filter(f => f !== type) : [...filters.Allergens, type];
+            newObj = { Allergens: newVal };
+        } else if (grp === "Heat") {
+            newObj = { Heat: type };
+        } else if (grp === "Diet") {
+            newObj = { Diet: type };
+        } else {
+            return;
+        }
+        setFilters({...filters, ...newObj});
+    }
 
     function handleClick(id) {
         const recipe = recipes.find(r => r._id === id);
@@ -61,8 +80,8 @@ function PlanningPage({ selected, setSelected }) {
             )}
             <h1>Select Your Course</h1>
             <div className={styles.options}>
-                {options.map(opt => {
-                    return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} />
+                {filterOptions.map(opt => {
+                    return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} onChange={updateFilters} />
                 })}
             </div>
             {selected.length > 0 && (
@@ -80,7 +99,7 @@ function PlanningPage({ selected, setSelected }) {
                 <button>Search</button>
             </div>
             <div className={styles.recipes}>
-                {recipes.map(r => {
+                {displayed.map(r => {
                     return <SelectableRecipe key={uuidv4()} recipe={r} onClick={(id) => {handleClick(id)}} selected={selected.some(s => s._id === r._id)} />
                 })}
             </div>

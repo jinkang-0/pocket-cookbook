@@ -10,21 +10,9 @@ import TextboxField from "../components/TextboxField";
 import NumberSelectField from "../components/NumberSelectField";
 import styles from "../styles/addrecipe.module.css";
 
-/**
- * Errors:
- * 0 - ok
- * 1 - missing name
- * 2 - missing source
- * 3 - missing image
- * 4 - missing tags
- * 5 - missing description
- * 6 - missing ingredients
- * 7 - missing directions
- */
-
 function AddRecipePage() {
 
-    const [form, setForm] = useState({diet: "All", heat: 0});
+    const [form, setForm] = useState({diet: "All", heat: "None"});
     const [error, setError] = useState({name: false});
     const navigate = useNavigate();
 

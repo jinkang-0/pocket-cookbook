@@ -1,7 +1,7 @@
 import React from "react";
 import OptionItem from "./OptionItem";
 
-function Option({ group, options, type }) {
+function Option({ group, options, type, onChange }) {
     const opts = options.map(opt => {
         const newOpt = { name: opt };
         newOpt.checked = (type === "checkbox");
@@ -15,7 +15,7 @@ function Option({ group, options, type }) {
         <div>
             <h3>{group}</h3>
             {opts.map(opt => {
-                return <OptionItem key={opt.name} group={group} name={opt.name} type={type} checked={opt.checked} />
+                return <OptionItem key={opt.name} group={group} name={opt.name} type={type} checked={opt.checked} onChange={onChange} />
             })}
         </div>
     );
