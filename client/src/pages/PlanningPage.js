@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/planning.module.css";
 import Option from "../components/Option";
@@ -7,6 +7,8 @@ import SearchBar from '../components/SearchBar.js';
 import SelectableRecipe from '../components/SelectableRecipe.js';
 
 function PlanningPage({ selected, setSelected, filterOptions }) {
+
+    const navigate = useNavigate();
 
     const [recipes, setRecipes] = useState([]);
     const [displayed, setDisplayed] = useState([]);
@@ -75,7 +77,7 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
             {(selected.length > 0) && (
                 <div className={styles.banner}>
                     <p>When you're ready, click the Ready button on the right to continue.</p>
-                    <Link to="/planning/batch">Ready</Link>
+                    <button onClick={() => {navigate('/planning/batch')}}>Ready</button>
                 </div>
             )}
             <h1>Select Your Course</h1>

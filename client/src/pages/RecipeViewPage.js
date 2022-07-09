@@ -53,7 +53,9 @@ function RecipeViewPage() {
             if (!recipe) {
                 return navigate('/error');
             }
-
+            
+            const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
+            recipe.heat = heatLevels.findIndex(h => h === recipe.heat);
             setRecipe(recipe);
         }
 
@@ -64,23 +66,32 @@ function RecipeViewPage() {
         window.scrollTo(0, 0);
     }, []);
 
-    // by Martin R on StackOverflow
+    // adapted from Martin R's answer on StackOverflow
     function getlowestfraction(x0) {
-        var eps = 1.0E-6;
-        var h, h1, h2, k, k1, k2, a, x;
-    
-        x = x0;
-        a = Math.floor(x);
-        h1 = 1;
-        k1 = 0;
-        h = a;
-        k = 1;
+        if (Math.abs(Math.round(x0) - x0) < 1.0E-3)
+            return Math.round(x0);
+        else if (x0 > 1) {
+            const integer = Math.floor(x0);
+            const frac = getlowestfraction(x0 - integer);
+            return `${integer} ${frac}`;
+        }
+
+        var eps = 1.0E-3;
+        var x = x0,
+            a = Math.floor(x),
+            h1 = 1,
+            k1 = 0,
+            h = a,
+            k = 1,
+            h2, k2;
     
         while (x-a > eps*k*k) {
             x = 1/(x-a);
             a = Math.floor(x);
-            h2 = h1; h1 = h;
-            k2 = k1; k1 = k;
+            h2 = h1;
+            h1 = h;
+            k2 = k1;
+            k1 = k;
             h = h2 + a*h1;
             k = k2 + a*k1;
         }
@@ -104,35 +115,47 @@ function RecipeViewPage() {
                     <span className={styles.source}>Source: {recipe.source}</span>
                     <p>{recipe.description}</p>
                     <span className={styles.misc}>
-                        ETA: {recipe.time}
+                        {recipe.time && (
+                            <>
+                                ETA: {recipe.time}
+                            </>
+                        )}
                         <br />
-                        Yield: {recipe.yield}
+                        {recipe.yield && (
+                            <>
+                                Yield: {recipe.yield}
+                            </>
+                        )}
                     </span>
                 </div>
             </div>
+            {(recipe.allergens || recipe.heat > 0) && (
+                <div className={styles.extra}>
+                    {(recipe.allergens && recipe.allergens.length > 0) && (
+                        <div className={styles.allergens}>
+                            <h4>Allergens:</h4>
+                            {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
+                            {recipe.allergens.includes("Nuts") && <NutIcon />}
+                            {recipe.allergens.includes("Wheat") && <WheatIcon />}
+                            {recipe.allergens.includes("Fish") && <FishIcon />}
+                            {recipe.allergens.includes("Milk") && <MilkIcon />}
+                            {recipe.allergens.includes("Egg") && <EggIcon />}
+                            {recipe.allergens.includes("Soy") && <SoyIcon />}
+                            {recipe.allergens.includes("Sesame") && <SesameIcon />}
+                        </div>
+                    )}
+                    {recipe.heat > 0 && (
+                        <div className={styles.heat}>
+                            <h4>Spiciness:</h4>
+                            <FireIcon />
+                            {recipe.heat > 1 && <FireIcon />}
+                            {recipe.heat > 2 && <FireIcon />}
+                            {recipe.heat > 3 && <FireIcon />}
+                        </div>
+                    )}
+                </div>
+            )}
             <div className={styles.body}>
-                {(recipe.allergens && recipe.allergens.length > 0) && (
-                    <div className={styles.allergens}>
-                        <h4>Allergens:</h4>
-                        {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
-                        {recipe.allergens.includes("Nuts") && <NutIcon />}
-                        {recipe.allergens.includes("Wheat") && <WheatIcon />}
-                        {recipe.allergens.includes("Fish") && <FishIcon />}
-                        {recipe.allergens.includes("Milk") && <MilkIcon />}
-                        {recipe.allergens.includes("Egg") && <EggIcon />}
-                        {recipe.allergens.includes("Soy") && <SoyIcon />}
-                        {recipe.allergens.includes("Sesame") && <SesameIcon />}
-                    </div>
-                )}
-                {recipe.heat > 0 && (
-                    <div className={styles.heat}>
-                        <h4>Spice Level:</h4>
-                        <FireIcon />
-                        {recipe.heat > 1 && <FireIcon />}
-                        {recipe.heat > 2 && <FireIcon />}
-                        {recipe.heat > 3 && <FireIcon />}
-                    </div>
-                )}
                 <div>
                     <h2>Ingredients</h2>
                     <ul>

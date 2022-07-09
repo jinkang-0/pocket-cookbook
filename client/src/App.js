@@ -7,6 +7,7 @@ import RecipeViewPage from "./pages/RecipeViewPage";
 import AboutPage from "./pages/AboutPage";
 import AddRecipePage from "./pages/AddRecipePage";
 import BatchSelectPage from "./pages/BatchSelectPage";
+import SummaryPage from "./pages/SummaryPage";
 import ErrorPage from "./pages/ErrorPage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/" exact element={<MenuPage />} />
                 <Route path="/planning" exact element={<PlanningPage selected={selected} setSelected={setSelected} filterOptions={filterOptions} />} />
                 <Route path="/planning/batch" exact element={<BatchSelectPage selected={selected} setSelected={setSelected} />} />
+                <Route path="/planning/summary" exact element={<SummaryPage selected={selected} />} />
                 <Route path="/recipes" exact element={<RecipesPage filterOptions={filterOptions} />} />
                 <Route path="/recipes/add" exact element={<AddRecipePage />} />
                 <Route path="/recipes/view/:id" element={<RecipeViewPage />} />

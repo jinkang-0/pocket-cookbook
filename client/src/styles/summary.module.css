@@ -1,0 +1,160 @@
+/* main body container */
+
+.container {
+    width: 100%;
+    min-height: calc(100vh - 6rem);
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    padding: 2rem 4rem;
+    gap: 2rem;
+}
+
+.container svg {
+    width: 1.5rem;
+    height: auto;
+}
+
+
+/* allergens box */
+
+.allergens {
+    grid-column: 1/3;
+    display: flex;
+    align-items: center;
+    background: var(--background);
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+}
+
+.allergens span {
+    margin: auto 0;
+    margin-left: .75rem;
+}
+
+.allergens > div {
+    margin: .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.allergens > div svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+/* ingredients box */
+
+.ingredients {
+    grid-column: 1;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    background: var(--alternate);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    height: fit-content;
+}
+
+.ingredients h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.ingredients > div {
+    margin: 0 2rem;
+}
+
+.ingredients b {
+    font-size: 1.15rem;
+    display: flex;
+}
+
+.ingredients b svg {
+    margin-left: .5rem;
+}
+
+.ingredients ul li {
+    margin-left: 1.5rem;
+}
+
+.ingredients hr {
+    width: 50%;
+    margin: 2rem auto;
+}
+
+
+/* recipes section */
+
+.recipes {
+    grid-column: 2;
+}
+
+.recipes h1 {
+    font-weight: normal;
+    font-size: 3rem;
+}
+
+
+/* recipes box */
+
+.recipeBox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.recipeBox header {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+.recipeBox header > h4 {
+    margin: 0 .75rem;
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: .5rem 0;
+}
+
+.recipeBox header > div {
+    margin-top: auto;
+    margin-bottom: .35rem;
+}
+
+.recipeBox header > div svg {
+    width: 1.25rem;
+}
+
+.recipeBox header > svg {
+    margin-left: auto;
+    width: 1.75rem;
+    margin-right: .25rem;
+}
+
+.recipeBox section {
+    box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
+    padding: 1.2rem 0;
+    background: #f5f2f2;
+    display: none;
+}
+
+.recipeBox section li {
+    margin: .15rem 0;
+    margin-left: 2rem;
+}
+
+
+/* expand recipe box */
+
+.expanded header > svg {
+    transform: rotate(90deg);
+}
+
+.expanded section {
+    display: block;
+}
+
+

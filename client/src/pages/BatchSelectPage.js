@@ -21,7 +21,7 @@ function BatchSelectPage({ selected, setSelected }) {
                     return <RecipeBatchSelect key={uuidv4()} recipe={s} />
                 })}
             </div>
-            <button>Proceed</button>
+            <button onClick={() => {navigate('/planning/summary')}}>Proceed</button>
         </div>
     );
 }
