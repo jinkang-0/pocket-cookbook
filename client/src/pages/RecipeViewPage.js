@@ -66,7 +66,7 @@ function RecipeViewPage() {
 
     // by Martin R on StackOverflow
     function getlowestfraction(x0) {
-        var eps = 1.0E-15;
+        var eps = 1.0E-6;
         var h, h1, h2, k, k1, k2, a, x;
     
         x = x0;
@@ -101,7 +101,7 @@ function RecipeViewPage() {
                         {recipe.diet === "Vegetarian" && <LeafIcon />}
                         {recipe.diet === "Vegan" && <TreeIcon />}
                     </h1>
-                    <span>Source: {recipe.source}</span>
+                    <span className={styles.source}>Source: {recipe.source}</span>
                     <p>{recipe.description}</p>
                     <span className={styles.misc}>
                         ETA: {recipe.time}
@@ -111,7 +111,7 @@ function RecipeViewPage() {
                 </div>
             </div>
             <div className={styles.body}>
-                {recipe.allergens.length > 0 && (
+                {(recipe.allergens && recipe.allergens.length > 0) && (
                     <div className={styles.allergens}>
                         <h4>Allergens:</h4>
                         {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
@@ -174,7 +174,7 @@ function RecipeViewPage() {
                 {recipe.note && (
                     <div>
                         <h2>Note</h2>
-                        <p>{recipe.note}</p>
+                        <p className={styles.note}>{recipe.note}</p>
                     </div>
                 )}
             </div>

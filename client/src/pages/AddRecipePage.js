@@ -90,7 +90,7 @@ function AddRecipePage() {
             }
         });
 
-        navigate("/");
+        navigate("/recipes");
     }
 
     return (
@@ -113,13 +113,13 @@ function AddRecipePage() {
                 <NumberSelectField label="Yield" options={["serving", "cup", "tsp", "tbs", "kg", "g", "lb", "oz", "pt", "qt", "gal", "mL", "L"]} onChange={v => {updateForm({ yield: v })}} />
                 <SelectField label="Diet" required={true} options={["All", "Vegetarian", "Vegan"]} onChange={v => {updateForm({ diet: v })}} />
                 <SelectField label="Spice Level" required={true} options={["None", "Low", "Medium", "High", "Very High"]} onChange={v => {updateForm({ heat: v })}} />
-                <MultiSelectField label="Meal Type" required={true} options={["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup"]} onChange={v => {updateForm({ tags: v })}} />
+                <MultiSelectField label="Meal Type" required={true} options={["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"]} onChange={v => {updateForm({ tags: v })}} />
                 <ChecklistField label="Contains These Allergens" options={["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"]} onChange={v => {updateForm({ allergens: v })}} />
                 <TextField label="Image URL" required={true} onChange={e => {updateForm({ img: e.target.value })}} />
                 <IngredientField label="Ingredients" required={true} onChange={v => {updateForm({ ingredients: v })}} />
                 <IngredientField label="Optional Ingredients" onChange={v => {updateForm({ optionalIngredients: v })}} />
                 <ListField label="Directions" ordered={true} required={true} onChange={v => {updateForm({ directions: v })}} />
-                <ListField label="Prep Directions" ordered={true} onChange={v => {updateForm({ prepDirections: v })}} />
+                <ListField label="Prep Directions" onChange={v => {updateForm({ prepDirections: v })}} />
                 <TextboxField label="Notes" onChange={e => {updateForm({ note: e.target.value })}} />
                 <button onClick={submitForm}>Add</button>
             </form>

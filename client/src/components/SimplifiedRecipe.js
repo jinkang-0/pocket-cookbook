@@ -32,7 +32,7 @@ function SimplifiedRecipe({ recipe }) {
                     {recipe.diet === "Vegetarian" && <LeafIcon />}
                     {recipe.diet === "Vegan" && <TreeIcon />}
                 </h3>
-                <div>
+                <div className={styles.tags}>
                     {recipe.tags.map(t => {
                         return <span key={uuidv4()} className={styles.tag}>{t}</span>
                     })}
@@ -41,7 +41,7 @@ function SimplifiedRecipe({ recipe }) {
                 <div>
                     <Link to={`/recipes/view/${recipe._id.toString()}`}>View Recipe</Link>
                     <div className={styles.icons}>
-                        {recipe.allergens.length > 0 && (
+                        {(recipe.allergens && recipe.allergens.length > 0) && (
                             <div>
                                 {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
                                 {recipe.allergens.includes("Nuts") && <NutIcon />}

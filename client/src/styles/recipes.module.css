@@ -9,8 +9,8 @@
 
 .sidebar {
     background: var(--alternate);
-    /* border: 1px solid black; */
     box-shadow: 2px 4px 7px rgba(0, 0, 0, .25);
+    height: fit-content;
 }
 
 
@@ -152,11 +152,18 @@
     margin: auto 0 .25rem .75rem;
 }
 
+.recipe .tags {
+    display: flex;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
 .recipe .tag {
+    display: inline;
     background: var(--tag);
     font-size: .85rem;
     padding: .15rem .35rem;
-    margin: .25rem 0;
+    margin: .25rem;
 }
 
 .recipe p {

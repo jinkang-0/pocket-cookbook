@@ -62,8 +62,8 @@
     margin-left: 1rem;
 }
 
-.intro span {
-    margin: 1rem 0;
+.intro span.source {
+    margin-bottom: 1rem;
 }
 
 .intro p {
@@ -112,6 +112,9 @@
     font-size: 1.15rem;
 }
 
+.body p.note {
+    white-space: pre-wrap;
+}
 
 
 /* specifics */

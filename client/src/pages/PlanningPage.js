@@ -29,9 +29,8 @@ const options = [
     }
 ];
 
-function PlanningPage() {
+function PlanningPage({ selected, setSelected }) {
 
-    const [selected, setSelected] = useState([]);
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -43,6 +42,14 @@ function PlanningPage() {
 
         fetchData();
     }, []);
+
+    function handleClick(id) {
+        const recipe = recipes.find(r => r._id === id);
+        if (selected.some(s => s._id === id))
+            setSelected(selected.filter(s => s._id !== recipe._id))
+        else
+            setSelected([...selected, recipe]);
+    }
 
     return (
         <div className={styles.container}>
@@ -58,13 +65,23 @@ function PlanningPage() {
                     return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} />
                 })}
             </div>
+            {selected.length > 0 && (
+                <div className={styles.selectedList}>
+                    <h4>Selected Recipes</h4>
+                    <ul>
+                        {selected.map(s => {
+                            return <li key={uuidv4()}>{s.name}</li>
+                        })}
+                    </ul>
+                </div>
+            )}
             <div className={styles.filter}>
                 <SearchBar />
                 <button>Search</button>
             </div>
             <div className={styles.recipes}>
                 {recipes.map(r => {
-                    return <SelectableRecipe key={uuidv4()} recipe={r} selected={selected} setSelected={setSelected} />
+                    return <SelectableRecipe key={uuidv4()} recipe={r} onClick={(id) => {handleClick(id)}} selected={selected.some(s => s._id === r._id)} />
                 })}
             </div>
         </div>

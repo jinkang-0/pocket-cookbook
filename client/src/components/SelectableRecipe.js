@@ -15,25 +15,17 @@ import TreeIcon from "../icons/TreeIcon";
 import FireIcon from "../icons/FireIcon";
 import CheckIcon from "../icons/CheckIcon";
 
-function SelectableRecipe({ recipe, selected, setSelected }) {
+function SelectableRecipe({ recipe, selected, onClick }) {
 
     // get heat index
     const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
     const heatIndex = heatLevels.findIndex(h => h === recipe.heat);
 
-    // select recipe when clicked
-    function handleClick() {
-        if (selected.includes(recipe.name))
-            setSelected(selected.filter(s => s !== recipe.name));
-        else
-            setSelected([...selected, recipe.name]);
-    }
-
     // determine class list
-    const containerClasses = (selected.includes(recipe.name)) ? `${styles.recipe} ${styles.selected}` : styles.recipe;
+    const containerClasses = (selected) ? `${styles.recipe} ${styles.selected}` : styles.recipe;
 
     return (
-        <div className={containerClasses} onClick={handleClick}>
+        <div className={containerClasses} onClick={() => {onClick(recipe._id)}}>
             <h4>{recipe.name}</h4>
             <div className={styles.details}>
                 <div className={styles.diet}>
@@ -45,19 +37,22 @@ function SelectableRecipe({ recipe, selected, setSelected }) {
                     <img src={recipe.img} alt={recipe.name} />
                 </div>
                 <div className={styles.allergens}>
-                    {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
-                    {recipe.allergens.includes("Nuts") && <NutIcon />}
-                    {recipe.allergens.includes("Wheat") && <WheatIcon />}
-                    {recipe.allergens.includes("Fish") && <FishIcon />}
-                    {recipe.allergens.includes("Milk") && <MilkIcon />}
-                    {recipe.allergens.includes("Egg") && <EggIcon />}
-                    {recipe.allergens.includes("Soy") && <SoyIcon />}
-                    {recipe.allergens.includes("Sesame") && <SesameIcon />}
+                    {recipe.allergens && (
+                        <>
+                            {recipe.allergens.includes("Shellfish") && <ShellfishIcon />}
+                            {recipe.allergens.includes("Nuts") && <NutIcon />}
+                            {recipe.allergens.includes("Wheat") && <WheatIcon />}
+                            {recipe.allergens.includes("Fish") && <FishIcon />}
+                            {recipe.allergens.includes("Milk") && <MilkIcon />}
+                            {recipe.allergens.includes("Egg") && <EggIcon />}
+                            {recipe.allergens.includes("Soy") && <SoyIcon />}
+                            {recipe.allergens.includes("Sesame") && <SesameIcon />}
+                        </>
+                    )}
                 </div>
                 <div className={styles.heat}>
                     {heatIndex > 0 && (
                         <>
-                            <FireIcon />
                             <FireIcon />
                             {heatIndex > 1 && <FireIcon />}
                             {heatIndex > 2 && <FireIcon />}
@@ -74,7 +69,7 @@ function SelectableRecipe({ recipe, selected, setSelected }) {
             <p>
                 {recipe.description}
             </p>
-            {(selected.includes(recipe.name)) && <CheckIcon className={styles.check} />}
+            {(selected) && <CheckIcon className={styles.check} />}
         </div>
     );
 }

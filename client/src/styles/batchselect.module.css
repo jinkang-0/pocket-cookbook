@@ -45,15 +45,19 @@
     margin: .5rem 0;
     margin-left: 2rem;
     margin-right: auto;
+    margin-bottom: 1.5rem;
 }
 
 .recipe > hr {
     width: 60%;
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
 }
 
-.recipe > p {
-    margin-top: 1.5rem;
+.batchSelect {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .recipe input[type="number"] {
@@ -68,7 +72,7 @@
     text-align: center;
     font-size: 1rem;
     padding: .1rem 0;
-    margin: .5rem 0;
+    margin: .25rem 0;
 }
 
 .recipe input[type="number"]::-webkit-outer-spin-button,
