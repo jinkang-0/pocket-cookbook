@@ -4,6 +4,12 @@ const recipeRoutes = express.Router();
 const dbo = require('../db/connect');
 
 // get requests
+recipeRoutes.route('/verification').get(async (req, res) => {
+    const db = dbo.getDb();
+    const data = await db.collection('misc').findOne({data: "verificationCode"});
+    res.json(data);
+});
+
 recipeRoutes.route('/recipes').get(async (req, res) => {
     const db = dbo.getDb();
     const data = await db.collection('recipes').find().sort({ name: 1 }).toArray();

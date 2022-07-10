@@ -11,6 +11,7 @@
     background: var(--alternate);
     box-shadow: 2px 4px 7px rgba(0, 0, 0, .25);
     height: fit-content;
+    user-select: none;
 }
 
 
@@ -169,6 +170,12 @@
 .recipe p {
     font-size: 1rem;
     width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .recipe a {

@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/batchselect.module.css";
 
-function RecipeBatchSelect({ recipe }) {
+function RecipeBatchSelect({ recipe, updateBatches }) {
 
-    const [ batches, setBatches ] = useState(recipe.ingredients);
+    const [mult, setMult] = useState("1");
 
-    function updateBatches(e) {
-        const newAmounts = recipe.ingredients.map(i => {
-            return {
-                name: i.name,
-                quantity: parseFloat(i.quantity) * e.target.value,
-                units: i.units
-            }
-        });
-
-        setBatches(newAmounts);
+    function onChange(e) {
+        setMult(e.target.value);
+        updateBatches(e.target.value);
     }
 
     // adapted from Martin R's answer on StackOverflow
@@ -55,12 +48,15 @@ function RecipeBatchSelect({ recipe }) {
         <div className={styles.recipe}>
             <h3>{recipe.name}</h3>
             <ul>
-                {batches.map((i) => {
+                {recipe.ingredients.map((i) => {
                     return (
                         <li key={uuidv4()}>
                             {(i.quantity) ?
                                 <>
-                                    {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
+                                    {(mult === '') ?
+                                        <>{i.name}</> :
+                                        <>{(Number.isInteger(parseFloat(i.quantity*parseFloat(mult)))) ? i.quantity*parseFloat(mult) : getlowestfraction(i.quantity*parseFloat(mult))} {i.units} {i.name}</>
+                                    }
                                 </> :
                                 <>
                                     {i.units} {i.name}
@@ -83,7 +79,7 @@ function RecipeBatchSelect({ recipe }) {
             )}
             <div className={styles.batchSelect}>
                 <p>Batches</p>
-                <input type="number" name="batch" onChange={updateBatches} defaultValue={1} />
+                <input type="number" name="batch" onChange={onChange} defaultValue={mult} />
             </div>
         </div>
     );

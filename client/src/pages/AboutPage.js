@@ -7,7 +7,7 @@ function AboutPage() {
             <header className={styles.intro}>
                 <h1>Recipes, made convenient</h1>
                 <p>
-                    With the use of filters, search, and customization, recipe searching becomes a whole lot easier. View public recipes, or run it locally to manage your personal recipes and make life easier.
+                    With the use of filters, search, and customization, finding and managing recipes becomes a whole lot easier. View public recipes, or run it locally to manage your personal recipes and make life easier.
                 </p>
             </header>
 

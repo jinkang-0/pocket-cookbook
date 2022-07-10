@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 import TextField from "../components/TextField";
 import SelectField from "../components/SelectField";
 import ChecklistField from "../components/ChecklistField";
@@ -15,6 +16,12 @@ function AddRecipePage() {
     const [form, setForm] = useState({diet: "All", heat: "None"});
     const [error, setError] = useState({name: false});
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const cookies = new Cookies();
+        if (!cookies.get('verified') || cookies.get('verified') === 'false')
+            navigate('/verify');
+    }, [navigate]);
 
     function updateForm(value) {
         setForm({...form, ...value});

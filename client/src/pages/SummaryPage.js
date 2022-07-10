@@ -24,11 +24,31 @@ function SummaryPage({ selected }) {
     useEffect(() => {
         if (!selected || selected.length === 0)
             navigate('/planning');
+        else if (selected.some(s => !s.multiplier))
+            navigate('/planning');
     }, [selected, navigate]);
 
     const sumAllergens = (selected) ? selected.reduce((prev, current) => {
         return (current.allergens) ? [...prev, ...current.allergens] : prev;
     }, []) : [];
+
+    const multSelected = selected.map(s => {
+        const ing = s.ingredients.map(i => {
+            return {
+                name: i.name,
+                quantity: i.quantity * parseFloat(s.multiplier),
+                units: i.units
+            };
+        });
+        return {
+            _id: s._id,
+            name: s.name,
+            diet: s.diet,
+            ingredients: ing,
+            multiplier: s.multiplier
+        };
+    })
+
 
     function evaluateHeat(heatStr) {
         const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
@@ -101,35 +121,37 @@ function SummaryPage({ selected }) {
             )}
             <div className={styles.ingredients}>
                 <h2>Ingredients</h2>
-                {selected.map(s => {
-                    return (
-                        <div key={uuidv4()}>
-                            <b>
-                                {s.name}
-                                {s.diet === "All" && <MeatIcon />}
-                                {s.diet === "Vegetarian" && <LeafIcon />}
-                                {s.diet === "Vegan" && <TreeIcon />}
-                            </b>
-                            <ul>
-                                {s.ingredients.map(i => {
-                                    return (
-                                        <li key={uuidv4()}>
-                                            {(i.quantity) ?
-                                                <>
-                                                    {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
-                                                </> :
-                                                <>
-                                                    {i.units} {i.name}
-                                                </>
-                                            }
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                            {(selected.findIndex(x => x._id === s._id) !== selected.length-1) && <hr />}
-                        </div>
-                    )
-                })}
+                <div>
+                    {multSelected.map(s => {
+                        return (
+                            <div key={uuidv4()}>
+                                <b>
+                                    {s.name} {(s.multiplier !== "1") && <>({s.multiplier})</>}
+                                    {s.diet === "All" && <MeatIcon />}
+                                    {s.diet === "Vegetarian" && <LeafIcon />}
+                                    {s.diet === "Vegan" && <TreeIcon />}
+                                </b>
+                                <ul>
+                                    {s.ingredients.map(i => {
+                                        return (
+                                            <li key={uuidv4()}>
+                                                {(i.quantity) ?
+                                                    <>
+                                                        {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
+                                                    </> :
+                                                    <>
+                                                        {i.units} {i.name}
+                                                    </>
+                                                }
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                                {(multSelected.findIndex(x => x._id === s._id) !== multSelected.length-1) && <hr />}
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
             <div className={styles.recipes}>
                 <h1>Recipes</h1>

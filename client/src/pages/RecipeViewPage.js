@@ -175,6 +175,27 @@ function RecipeViewPage() {
                         })}
                     </ul>
                 </div>
+                {recipe.optionalIngredients && (
+                    <div>
+                        <h2>Optional Ingredients</h2>
+                        <ul>
+                            {recipe.optionalIngredients.map(i => {
+                                return (
+                                    <li key={uuidv4()}>
+                                        {(i.quantity) ?
+                                            <>
+                                                {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
+                                            </> :
+                                            <>
+                                                {i.units} {i.name}
+                                            </>
+                                        }
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                )}
                 {recipe.prepDirections && (
                     <div className={styles.prep}>
                         <h2>Before You Start</h2>
