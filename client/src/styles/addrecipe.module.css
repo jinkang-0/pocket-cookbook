@@ -20,7 +20,7 @@
 .form {
     box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
     width: 45%;
-    margin: 2rem 0;
+    margin: 2rem;
     margin-bottom: 4rem;
     padding: 2rem;
     display: flex;
@@ -407,4 +407,32 @@
     content: '*';
     color: red;
     margin-left: .5rem;
+}
+
+
+/* media queries */
+
+@media (max-width: 1000px) {
+
+    .form {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .form {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 400px) {
+    
+    .form {
+        width: 90%;
+        padding: 1.2rem;
+    }
+
 }

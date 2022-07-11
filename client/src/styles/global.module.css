@@ -129,3 +129,23 @@ footer svg {
     width: auto;
     margin: 0 .25rem;
 }
+
+
+/* media queires */
+
+@media (max-width: 500px) {
+    
+    nav a {
+        margin: 0 2vw;
+    }
+
+}
+
+@media (max-width: 300px) {
+
+    nav a {
+        font-size: .85rem;
+    }
+
+}
+

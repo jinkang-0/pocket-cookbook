@@ -18,13 +18,15 @@ font-family: 'Roboto Mono', monospace;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
-    padding: 4rem 5rem;
+    padding: 4rem 8vw;
+    margin: 0 5vw;
 }
 
 .container h2 {
     font-size: 1.5rem;
     font-weight: normal;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 

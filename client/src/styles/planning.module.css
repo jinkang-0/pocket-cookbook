@@ -1,6 +1,6 @@
 /* banner */
 
-.banner {
+.container > .banner {
     width: 100%;
     background: #E7F1F1;
     display: flex;
@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    padding: 0;
 }
 
 .banner > p {
@@ -20,12 +21,12 @@
     border: none;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     font-size: 1rem;
     font-weight: 500;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, .25);
     cursor: pointer;
-    margin: .75rem;
+    margin: auto .75rem;
     display: grid;
     place-items: center;
     transition: 100ms;
@@ -45,6 +46,10 @@
     align-items: center;
 }
 
+.container > div {
+    padding: 0 10vw;
+}
+
 .container > h1 {
     text-align: center;
     font-weight: normal;
@@ -58,9 +63,9 @@
 
 .options {
     box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
-    width: 75%;
+    width: 100%;
     display: flex;
-    padding: 2rem 3rem;
+    padding: 2rem 4vw;
     user-select: none;
 }
 
@@ -100,7 +105,7 @@
 /* filter & search bar */
 
 .filter {
-    width: 75%;
+    width: 100%;
     height: 2rem;
     display: flex;
     margin: 2rem 0;
@@ -148,7 +153,7 @@
 /* selected list */
 
 .selectedList {
-    width: 75%;
+    width: 100%;
     margin-top: 2rem;
 }
 
@@ -166,7 +171,7 @@
 /* recipes */
 
 .recipes {
-    width: 75%;
+    width: 100%;
     gap: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -278,5 +283,102 @@
 
 .recipe.selected {
     background: #ECF2F4;
+}
+
+
+/* media queries */
+
+@media (max-width: 1000px) {
+
+    .container > div {
+        padding: 0 5vw;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .banner p,
+    .banner button {
+        font-size: .9rem;
+    }
+
+    .options {
+        padding: 1.25rem .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 1.5rem;
+    }
+
+    .filter {
+        margin: 1.5rem 0;
+    }
+
+    .selectedList h4 {
+        font-size: 1.2rem;
+    }
+
+    .selectedList li {
+        font-size: 1rem;
+    }
+
+    .recipes {
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .banner p,
+    .banner button {
+        font-size: .85rem;
+    }
+
+    .banner p {
+        padding-right: 0;
+    }
+
+    .options {
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem 0;
+    }
+
+    .recipes {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .container h1 {
+        font-size: 2.25rem;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+    }
+
+    .options h3 {
+        font-size: 1.15rem;
+    }
+
+    .options label {
+        font-size: 1rem;
+    }
+
+    .filter {
+        height: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .filter input {
+        width: 0;
+        margin-right: .75rem;
+    }
+
 }
 

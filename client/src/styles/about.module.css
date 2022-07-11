@@ -2,22 +2,30 @@
 
 .intro {
     width: 100%;
-    padding: 14rem 4rem;
+    height: calc(100vh - 3rem);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2.5rem;
 }
 
 .intro h1 {
+    display: block;
     font-weight: normal;
     font-size: 3.5rem;
+    margin-top: auto;
+    margin-bottom: .5rem;
     opacity: 0;
     animation: fade-and-drop 1s .2s forwards;
 }
 
 .intro p {
-    padding: 2rem;
-    width: 40%;
-    margin: auto;
+    margin: 0 32vw;
+    margin-bottom: auto;
     opacity: 0;
+    margin-top: 1rem;
     animation: fade-and-drop 1s forwards;
 }
 
@@ -28,7 +36,7 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 1rem 1fr;
-    padding: 0 10rem;
+    padding: 0 8vw;
     gap: 2rem;
     margin-left: 2rem;
     margin-bottom: 10rem;
@@ -82,5 +90,73 @@
     }
 }
 
+
+
+/* media queries */
+
+@media (max-width: 700px) {
+
+    .intro h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        margin: 0 20vw;
+        margin-bottom: auto;
+    }
+
+    .profile {
+        padding: 0 20vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .profile .imgContainer {
+        width: 70%;
+        grid-row: 1;
+    }
+
+    .profile h3 {
+        grid-row: 2;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .intro h1 {
+        font-size: 1.75rem;
+    }
+
+    .intro p {
+        font-size: .95rem;
+    }
+
+    .profile {
+        padding: 0 10vw;
+        gap: 1rem;
+    }
+
+    .profile .imgContainer {
+        width: 100%;
+    }
+
+    .profile .imgContainer img {
+        padding: 1rem;
+    }
+
+    .profile h3 {
+        font-size: 1.45rem;
+    }
+
+    .profile span {
+        font-size: .95rem;
+    }
+
+}
 
 

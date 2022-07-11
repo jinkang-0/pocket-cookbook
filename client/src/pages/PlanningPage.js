@@ -81,29 +81,31 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
                 </div>
             )}
             <h1>Select Your Course</h1>
-            <div className={styles.options}>
-                {filterOptions.map(opt => {
-                    return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} onChange={updateFilters} />
-                })}
-            </div>
-            {selected.length > 0 && (
-                <div className={styles.selectedList}>
-                    <h4>Selected Recipes</h4>
-                    <ul>
-                        {selected.map(s => {
-                            return <li key={uuidv4()}>{s.name}</li>
-                        })}
-                    </ul>
+            <div>
+                <div className={styles.options}>
+                    {filterOptions.map(opt => {
+                        return <Option key={opt.group} group={opt.group} options={opt.options} type={opt.type} onChange={updateFilters} />
+                    })}
                 </div>
-            )}
-            <div className={styles.filter}>
-                <SearchBar />
-                <button>Search</button>
-            </div>
-            <div className={styles.recipes}>
-                {displayed.map(r => {
-                    return <SelectableRecipe key={uuidv4()} recipe={r} onClick={(id) => {handleClick(id)}} selected={selected.some(s => s._id === r._id)} />
-                })}
+                {selected.length > 0 && (
+                    <div className={styles.selectedList}>
+                        <h4>Selected Recipes</h4>
+                        <ul>
+                            {selected.map(s => {
+                                return <li key={uuidv4()}>{s.name}</li>
+                            })}
+                        </ul>
+                    </div>
+                )}
+                <div className={styles.filter}>
+                    <SearchBar />
+                    <button>Search</button>
+                </div>
+                <div className={styles.recipes}>
+                    {displayed.map(r => {
+                        return <SelectableRecipe key={uuidv4()} recipe={r} onClick={(id) => {handleClick(id)}} selected={selected.some(s => s._id === r._id)} />
+                    })}
+                </div>
             </div>
         </div>
     );
