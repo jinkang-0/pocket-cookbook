@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/recipes.module.css";
@@ -20,14 +21,16 @@ function RecipesPage({ filterOptions }) {
     });
 
     useEffect(() => {
-        async function fetchData() {
-            const res = await fetch('/db/recipes');
-            const r = await res.json();
-            setRecipes(r);
-            setDisplayed(r);
-        }
-
-        fetchData();
+        axios
+            .get('/db/recipes')
+            .then(res => {
+                const r = res.data;
+                setRecipes(r);
+                setDisplayed(r);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            });
     }, []);
 
     useEffect(() => {

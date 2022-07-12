@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
@@ -52,7 +53,7 @@ function AddRecipePage() {
         return false;
     }
 
-    async function submitForm(e) {
+    function submitForm(e) {
         e.preventDefault();
 
         if (checkErrors(form, true))
@@ -76,15 +77,14 @@ function AddRecipePage() {
             note: form.note
         };
 
-        await fetch("/db/recipes/add", {
-            method: "POST",
-            body: JSON.stringify(recipe),
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        });
-
-        navigate("/recipes");
+        axios
+            .post('/db/recipes/add', recipe)
+            .then(res => {
+                navigate('/recipes');
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            });
     }
 
     return (

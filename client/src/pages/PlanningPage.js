@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -21,13 +22,15 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
     });
 
     useEffect(() => {
-        async function fetchData() {
-            const res = await fetch('/db/recipes');
-            const data = await res.json();
-            setRecipes(data);
-        }
-
-        fetchData();
+        axios
+            .get('/db/recipes')
+            .then(res => {
+                const r = res.data;
+                setRecipes(r);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            });
     }, []);
 
     useEffect(() => {

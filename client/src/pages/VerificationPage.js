@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
@@ -11,13 +12,15 @@ function VerificationPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchCode() {
-            const res = await fetch('/db/verification');
-            const r = await res.json();
-            setCode(r.code);
-        }
-
-        fetchCode();
+        axios
+            .get('/db/verification')
+            .then(res => {
+                const r = res.data;
+                setCode(r.code);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            });
     }, []);
 
     function onChange(e) {

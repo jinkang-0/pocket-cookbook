@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
@@ -37,29 +38,25 @@ function RecipeViewPage() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchData() {
-            if (!params.id)
-                return navigate('/error');
+        if (!params.id)
+            return navigate('/error');
 
-            const id = params.id.toString();
-            const res = await fetch(`/id/recipes/${id}`);
+        const id = params.id.toString();
+        axios
+            .get(`/db/recipes/${id}`)
+            .then(res => {
+                const recipe = res.data;
+                if (!recipe)
+                    return navigate('/error');
 
-            if (!res.ok) {
+                const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
+                recipe.heat = heatLevels.findIndex(h => h === recipe.heat);
+                setRecipe(recipe);
+            })
+            .catch(err => {
+                console.log("Error:", err);
                 navigate('/error');
-                return;
-            }
-
-            const recipe = await res.json();
-            if (!recipe) {
-                return navigate('/error');
-            }
-            
-            const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
-            recipe.heat = heatLevels.findIndex(h => h === recipe.heat);
-            setRecipe(recipe);
-        }
-
-        fetchData();
+            });
     }, [params.id, navigate]);
 
     useEffect(() => {
