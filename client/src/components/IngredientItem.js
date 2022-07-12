@@ -2,9 +2,16 @@ import React from "react";
 
 function IngredientItem({ ingredient, handleClick }) {
 
-    var content = `${ingredient.quantity} ${ingredient.units} ${ingredient.name}`;
-    if (!ingredient.units)
-        content = (ingredient.quantity) ? `${ingredient.quantity} ${ingredient.name}` : `${ingredient.name}`;
+    var content = ingredient.name;
+    var optionalContent = "";
+    
+    if (ingredient.quantity) {
+        if (ingredient.optionalQuantity) {
+            optionalContent = (ingredient.optionalQuantity.units) ? `(${ingredient.optionalQuantity.quantity} ${ingredient.optionalQuantity.units})` : `(${ingredient.optionalQuantity.quantity})`;
+            content = (ingredient.units) ? `${ingredient.quantity} ${ingredient.units} ${optionalContent} ${ingredient.name}` : `${ingredient.quantity} ${optionalContent} ${ingredient.name}`;
+        } else
+            content = (ingredient.units) ? `${ingredient.quantity} ${ingredient.units} ${ingredient.name}` : `${ingredient.quantity} ${ingredient.name}`;
+    }
 
     return (
         <>

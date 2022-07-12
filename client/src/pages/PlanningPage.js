@@ -13,10 +13,11 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
     const [recipes, setRecipes] = useState([]);
     const [displayed, setDisplayed] = useState([]);
     const [filters, setFilters] = useState({
-        "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"],
+        "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry", "Bread"],
         "Allergens": ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
         "Heat": "Any",
-        "Diet": "All"
+        "Diet": "All",
+        "Search": ""
     });
 
     useEffect(() => {
@@ -38,6 +39,8 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
             if (filters.Heat !== "Any" && filters.Heat !== r.heat)
                 return false;
             if (filters.Diet !== "All" && filters.Diet !== r.diet)
+                return false;
+            if (!(new RegExp(filters.Search.toLowerCase())).test(r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")))
                 return false;
             return true;
         });
@@ -98,7 +101,7 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
                     </div>
                 )}
                 <div className={styles.filter}>
-                    <SearchBar />
+                    <SearchBar onChange={(e) => {setFilters({...filters, ...{Search: e.target.value}})}} />
                     <button>Search</button>
                 </div>
                 <div className={styles.recipes}>

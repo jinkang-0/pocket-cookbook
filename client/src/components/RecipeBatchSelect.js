@@ -44,25 +44,32 @@ function RecipeBatchSelect({ recipe, updateBatches }) {
         return h + "/" + k;
     }
 
+    function mapIngredientContent(ingredient, multiplier) {
+
+        var optionalContent = "";
+        if (ingredient.optionalQuantity) {
+            const parsedOptionalQuantity = (Number.isInteger(parseFloat(ingredient.optionalQuantity.quantity)*multiplier)) ? ingredient.optionalQuantity.quantity*multiplier : getlowestfraction(ingredient.optionalQuantity.quantity*multiplier);
+            optionalContent = (ingredient.optionalQuantity.units) ? `(${parsedOptionalQuantity} ${ingredient.optionalQuantity.units})` : `(${parsedOptionalQuantity})`;
+        }
+
+        if (ingredient.quantity) {
+            const parsedQuantity = (Number.isInteger(parseFloat(ingredient.quantity)*multiplier)) ? ingredient.quantity*multiplier : getlowestfraction(ingredient.quantity*multiplier);
+            if (ingredient.optionalQuantity)
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${optionalContent} ${ingredient.name}` : `${parsedQuantity} ${optionalContent} ${ingredient.name}`;
+            else
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${ingredient.name}` : `${parsedQuantity} ${ingredient.name}`;
+        }
+    
+        return ingredient.name;
+    }
+
     return (
         <div className={styles.recipe}>
             <h3>{recipe.name}</h3>
             <ul>
                 {recipe.ingredients.map((i) => {
                     return (
-                        <li key={uuidv4()}>
-                            {(i.quantity) ?
-                                <>
-                                    {(mult === '') ?
-                                        <>{i.name}</> :
-                                        <>{(Number.isInteger(parseFloat(i.quantity*parseFloat(mult)))) ? i.quantity*parseFloat(mult) : getlowestfraction(i.quantity*parseFloat(mult))} {i.units} {i.name}</>
-                                    }
-                                </> :
-                                <>
-                                    {i.units} {i.name}
-                                </>
-                            }
-                        </li>
+                        <li key={uuidv4()}>{mapIngredientContent(i, mult)}</li>
                     );
                 })}
             </ul>
@@ -72,7 +79,7 @@ function RecipeBatchSelect({ recipe, updateBatches }) {
                     <span>Optional</span>
                     <ul>
                         {recipe.optionalIngredients.map(oi => {
-                            return <li key={uuidv4()}>{oi.name}</li>
+                            return <li key={uuidv4()}>{mapIngredientContent(oi, mult)}</li>
                         })}
                     </ul>
                 </>

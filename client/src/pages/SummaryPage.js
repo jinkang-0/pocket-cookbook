@@ -32,24 +32,6 @@ function SummaryPage({ selected }) {
         return (current.allergens) ? [...prev, ...current.allergens] : prev;
     }, []) : [];
 
-    const multSelected = selected.map(s => {
-        const ing = s.ingredients.map(i => {
-            return {
-                name: i.name,
-                quantity: i.quantity * parseFloat(s.multiplier),
-                units: i.units
-            };
-        });
-        return {
-            _id: s._id,
-            name: s.name,
-            diet: s.diet,
-            ingredients: ing,
-            multiplier: s.multiplier
-        };
-    })
-
-
     function evaluateHeat(heatStr) {
         const heatLevels = ['None', 'Low', 'Medium', 'High', 'Very High'];
         const heatIndex = heatLevels.findIndex(h => h === heatStr);
@@ -97,6 +79,25 @@ function SummaryPage({ selected }) {
         return h + "/" + k;
     }
 
+    function mapIngredientContent(ingredient, multiplier) {
+
+        var optionalContent = "";
+        if (ingredient.optionalQuantity) {
+            const parsedOptionalQuantity = (Number.isInteger(parseFloat(ingredient.optionalQuantity.quantity)*multiplier)) ? ingredient.optionalQuantity.quantity*multiplier : getlowestfraction(ingredient.optionalQuantity.quantity*multiplier);
+            optionalContent = (ingredient.optionalQuantity.units) ? `(${parsedOptionalQuantity} ${ingredient.optionalQuantity.units})` : `(${parsedOptionalQuantity})`;
+        }
+
+        if (ingredient.quantity) {
+            const parsedQuantity = (Number.isInteger(parseFloat(ingredient.quantity)*multiplier)) ? ingredient.quantity*multiplier : getlowestfraction(ingredient.quantity*multiplier);
+            if (ingredient.optionalQuantity)
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${optionalContent} ${ingredient.name}` : `${parsedQuantity} ${optionalContent} ${ingredient.name}`;
+            else
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${ingredient.name}` : `${parsedQuantity} ${ingredient.name}`;
+        }
+    
+        return ingredient.name;
+    }
+
     function collapseExpand(id) {
         if (expanded.includes(id))
             setExpanded(expanded.filter(e => e !== id));
@@ -122,7 +123,7 @@ function SummaryPage({ selected }) {
             <div className={styles.ingredients}>
                 <h2>Ingredients</h2>
                 <div>
-                    {multSelected.map(s => {
+                    {selected.map(s => {
                         return (
                             <div key={uuidv4()}>
                                 <b>
@@ -134,20 +135,24 @@ function SummaryPage({ selected }) {
                                 <ul>
                                     {s.ingredients.map(i => {
                                         return (
-                                            <li key={uuidv4()}>
-                                                {(i.quantity) ?
-                                                    <>
-                                                        {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
-                                                    </> :
-                                                    <>
-                                                        {i.units} {i.name}
-                                                    </>
-                                                }
-                                            </li>
+                                            <li key={uuidv4()}>{mapIngredientContent(i, s.multiplier)}</li>
                                         );
                                     })}
                                 </ul>
-                                {(multSelected.findIndex(x => x._id === s._id) !== multSelected.length-1) && <hr />}
+                                <hr className={styles.divider} />
+                                {(s.optionalIngredients) && (
+                                    <>
+                                        <p>Optional</p>
+                                        <ul>
+                                            {s.optionalIngredients.map(i => {
+                                                return (
+                                                    <li key={uuidv4()}>{mapIngredientContent(i, s.multiplier)}</li>
+                                                )
+                                            })}
+                                        </ul>
+                                    </>
+                                )}
+                                {(selected.findIndex(x => x._id === s._id) !== selected.length-1) && <hr />}
                             </div>
                         )
                     })}
@@ -172,6 +177,12 @@ function SummaryPage({ selected }) {
                                             return <li key={uuidv4()}>{d}</li>
                                         })}
                                     </ol>
+                                    {s.note && (
+                                        <div>
+                                            <h3>Note</h3>
+                                            {s.note}
+                                        </div>
+                                    )}
                                 </section>
                             </div>
                         )

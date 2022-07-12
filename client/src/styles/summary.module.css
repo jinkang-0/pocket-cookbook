@@ -87,6 +87,12 @@
     margin: 2rem auto;
 }
 
+.ingredients hr.divider {
+    width: 30%;
+    margin: 1rem 0;
+    margin-right: auto;
+}
+
 
 /* recipes section */
 
@@ -149,6 +155,12 @@
 .recipeBox section li {
     margin: 1rem 0;
     margin-left: 2rem;
+}
+
+.recipeBox section div {
+    margin: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
 }
 
 

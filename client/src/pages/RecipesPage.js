@@ -15,7 +15,8 @@ function RecipesPage({ filterOptions }) {
         "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"],
         "Allergens": ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
         "Heat": "Any",
-        "Diet": "All"
+        "Diet": "All",
+        "Search": ""
     });
 
     useEffect(() => {
@@ -38,6 +39,8 @@ function RecipesPage({ filterOptions }) {
             if (filters.Heat !== "Any" && filters.Heat !== r.heat)
                 return false;
             if (filters.Diet !== "All" && filters.Diet !== r.diet)
+                return false;
+            if (!(new RegExp(filters.Search.toLowerCase())).test(r.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")))
                 return false;
             return true;
         });
@@ -81,7 +84,7 @@ function RecipesPage({ filterOptions }) {
             </div>
             <div>
                 <div className={styles.search}>
-                    <SearchBar />
+                    <SearchBar onChange={(e) => {setFilters({...filters, ...{Search: e.target.value}})}} />
                     <IconButton icon={<SearchIcon />} />
                 </div>
                 <div className={styles.recipes}>

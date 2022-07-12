@@ -15,7 +15,7 @@ import './styles/global.module.css';
 const filterOptions = [
     {
         group: "Meal",
-        options: ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"],
+        options: ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry", "Bread"],
         type: "checkbox"
     },
     {

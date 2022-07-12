@@ -14,45 +14,46 @@ function IngredientField({ label, required, onChange }) {
         const quantity = document.getElementById(`${componentId}quantity`);
         const units = document.getElementById(`${componentId}units`);
         const name = document.getElementById(`${componentId}name`);
+        const optionalUnits = document.getElementById(`${componentId}optionalUnits`);
+        const optionalQuantity = document.getElementById(`${componentId}optionalQuantity`);
         
         if (!name.value)
             return;
 
         // update ingredients
-        var newIngredients;
-        if (!quantity.value)
-            newIngredients = [...ingredients, {
-                name: name.value,
-                id: uuidv4()
-            }];
-        else if (quantity.value && !units.value)
-            newIngredients = [...ingredients, {
-                name: name.value,
-                quantity: quantity.value,
-                id: uuidv4()
-            }];
-        else if (quantity.value && units.value)
-            newIngredients = [...ingredients, {
-                name: name.value,
-                quantity: quantity.value,
-                units: units.value,
-                id: uuidv4()
-            }];
+        const newIngredient = {name: name.value, id: uuidv4()};
+        if (quantity.value && units.value)
+            newIngredient.units = units.value;
+        if (quantity.value)
+            newIngredient.quantity = quantity.value;
 
+        if (optionalQuantity.value) {
+            newIngredient.optionalQuantity = {quantity: optionalQuantity.value};
+            if (optionalUnits.value)
+                newIngredient.optionalQuantity.units = optionalUnits.value;
+        }
+
+        const newIngredients = [...ingredients, newIngredient];
         setIngredients(newIngredients);
 
         // update form
         const uploadableIngredients = newIngredients.map(i => {
-            return {
-                name: i.name,
-                quantity: i.quantity,
-                units: i.units
+            const ing = {name: i.name};
+            if (i.quantity) {
+                if (i.units)
+                    ing.units = i.units;
+                ing.quantity = i.quantity;
             }
-        })
+            if (i.optionalQuantity)
+                ing.optionalQuantity = i.optionalQuantity;
+            return ing;
+        });
         onChange(uploadableIngredients);
 
         // clear values
         name.value = '';
+        optionalQuantity.value = '';
+        optionalUnits.value = '';
     }
 
     function removeIngredient(e) {
@@ -94,7 +95,27 @@ function IngredientField({ label, required, onChange }) {
                 <input type="text" id={`${componentId}name`} onKeyDown={e => {(e.key === 'Enter') && addIngredient(e)}} placeholder="minced garlic"/>
             </div>
             <div>
-                <button onClick={addIngredient}>Add Item</button>
+                <input type="number" id={`${componentId}optionalQuantity`} placeholder="(1)" />
+                <div className={styles.selectBox}>
+                    <select id={`${componentId}optionalUnits`}>
+                        <option value="">  </option>
+                        <option value="cup">cup</option>
+                        <option value="tsp">tsp</option>
+                        <option value="tbs">tbs</option>
+                        <option value="kg">kg</option>
+                        <option value="g">g</option>
+                        <option value="lb">lb</option>
+                        <option value="oz">oz</option>
+                        <option value="pt">pint</option>
+                        <option value="qt">quart</option>
+                        <option value="gal">gallon</option>
+                        <option value="mL">mL</option>
+                        <option value="L">L</option>
+                    </select>
+                </div>
+                <div className={styles.buttons}>
+                    <button onClick={addIngredient}>Add Item</button>
+                </div>
             </div>
         </div>
     );

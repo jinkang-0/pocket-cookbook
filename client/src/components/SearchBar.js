@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SearchBar() {
+function SearchBar({ onChange }) {
   return (
-    <input type="text" name="name" id="search" />
+    <input type="text" name="name" id="search" onChange={onChange} />
   )
 }
 

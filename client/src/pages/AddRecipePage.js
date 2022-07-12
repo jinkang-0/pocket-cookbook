@@ -8,7 +8,6 @@ import ListField from "../components/ListField";
 import IngredientField from "../components/IngredientField";
 import MultiSelectField from "../components/MultiSelectField";
 import TextboxField from "../components/TextboxField";
-import NumberSelectField from "../components/NumberSelectField";
 import styles from "../styles/addrecipe.module.css";
 
 function AddRecipePage() {
@@ -104,11 +103,11 @@ function AddRecipePage() {
                 <TextField label="Recipe Name" required={true} onChange={e => {updateForm({ name: e.target.value })}} />
                 <TextField label="Source/Author" required={true} onChange={e => {updateForm({ source: e.target.value })}} />
                 <TextboxField label="Description" required={true} onChange={e => {updateForm({ description: e.target.value })}} />
-                <NumberSelectField label="Estimated Time" options={["min", "sec", "hr", "day"]} onChange={v => {updateForm({ time: v })}} />
-                <NumberSelectField label="Yield" options={["serving", "cup", "tsp", "tbs", "kg", "g", "lb", "oz", "pt", "qt", "gal", "mL", "L"]} onChange={v => {updateForm({ yield: v })}} />
+                <TextField label="Estimated Time" onChange={e => {updateForm({ time: e.target.value })}} />
+                <TextField label="Yield" onChange={e => {updateForm({ yield: e.target.value })}} />
                 <SelectField label="Diet" required={true} options={["All", "Vegetarian", "Vegan"]} onChange={v => {updateForm({ diet: v })}} />
                 <SelectField label="Spice Level" required={true} options={["None", "Low", "Medium", "High", "Very High"]} onChange={v => {updateForm({ heat: v })}} />
-                <MultiSelectField label="Meal Type" required={true} options={["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"]} onChange={v => {updateForm({ tags: v })}} />
+                <MultiSelectField label="Meal Type" required={true} options={["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry", "Bread"]} onChange={v => {updateForm({ tags: v })}} />
                 <ChecklistField label="Contains These Allergens" options={["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"]} onChange={v => {updateForm({ allergens: v })}} />
                 <TextField label="Image URL" required={true} onChange={e => {updateForm({ img: e.target.value })}} />
                 <IngredientField label="Ingredients" required={true} onChange={v => {updateForm({ ingredients: v })}} />

@@ -52,7 +52,7 @@
 /* text field */
 
 .form input[type="text"] {
-    width: 100%;
+    width: auto;
     background: none;
     border: none;
     outline: none;
@@ -317,7 +317,7 @@
     display: grid;
     grid-template-areas: "select";
     align-items: center;
-    width: 7rem;
+    width: 5rem;
 }
 
 .addIngredient .selectBox > select {
@@ -328,7 +328,7 @@
     font-size: 1rem;
     font-family: 'Quicksand', sans-serif;
     box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
-    width: auto;
+    width: 100%;
     padding: 0 .5rem;
     grid-area: select;
     text-align: left;
@@ -347,17 +347,22 @@
     margin: 0 .5rem;
 }
 
+.addIngredient .buttons {
+    margin-left: auto;
+}
+
 .addIngredient button {
     background: var(--background);
     outline: none;
     border: none;
     box-shadow: 0 2px 7px rgba(0, 0, 0, .25);
-    padding: .25rem 1rem;
+    padding: 0 .75rem;
     font-size: 1rem;
     font-family: 'Quicksand', sans-serif;
     cursor: pointer;
-    margin-bottom: .5rem;
     transition: 100ms;
+    margin-left: .5rem;
+    height: auto;
 }
 
 .addIngredient button:hover {
@@ -375,7 +380,7 @@
 
 .form ul li,
 .form ol li {
-    margin: .5rem 0;
+    padding: .5rem 0;
 }
 
 

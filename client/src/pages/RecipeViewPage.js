@@ -99,6 +99,25 @@ function RecipeViewPage() {
         return h + "/" + k;
     }
 
+    function mapIngredientContent(ingredient) {
+
+        var optionalContent = "";
+        if (ingredient.optionalQuantity) {
+            const parsedOptionalQuantity = (Number.isInteger(parseFloat(ingredient.optionalQuantity.quantity))) ? ingredient.optionalQuantity.quantity : getlowestfraction(ingredient.optionalQuantity.quantity);
+            optionalContent = (ingredient.optionalQuantity.units) ? `(${parsedOptionalQuantity} ${ingredient.optionalQuantity.units})` : `(${parsedOptionalQuantity})`;
+        }
+
+        if (ingredient.quantity) {
+            const parsedQuantity = (Number.isInteger(parseFloat(ingredient.quantity))) ? ingredient.quantity : getlowestfraction(ingredient.quantity);
+            if (ingredient.optionalQuantity)
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${optionalContent} ${ingredient.name}` : `${parsedQuantity} ${optionalContent} ${ingredient.name}`;
+            else
+                return (ingredient.units) ? `${parsedQuantity} ${ingredient.units} ${ingredient.name}` : `${parsedQuantity} ${ingredient.name}`;
+        }
+    
+        return ingredient.name;
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.intro}>
@@ -161,16 +180,7 @@ function RecipeViewPage() {
                     <ul>
                         {recipe.ingredients.map((i) => {
                             return (
-                                <li key={uuidv4()}>
-                                    {(i.quantity) ?
-                                        <>
-                                            {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
-                                        </> :
-                                        <>
-                                            {i.units} {i.name}
-                                        </>
-                                    }
-                                </li>
+                                <li key={uuidv4()}>{mapIngredientContent(i)}</li>
                             );
                         })}
                     </ul>
@@ -181,16 +191,7 @@ function RecipeViewPage() {
                         <ul>
                             {recipe.optionalIngredients.map(i => {
                                 return (
-                                    <li key={uuidv4()}>
-                                        {(i.quantity) ?
-                                            <>
-                                                {(Number.isInteger(parseFloat(i.quantity))) ? i.quantity : getlowestfraction(i.quantity)} {i.units} {i.name}
-                                            </> :
-                                            <>
-                                                {i.units} {i.name}
-                                            </>
-                                        }
-                                    </li>
+                                    <li key={uuidv4()}>{mapIngredientContent(i)}</li>
                                 )
                             })}
                         </ul>
