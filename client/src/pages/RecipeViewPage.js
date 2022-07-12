@@ -43,7 +43,7 @@ function RecipeViewPage() {
 
         const id = params.id.toString();
         axios
-            .get(`/db/recipes/${id}`)
+            .get(`/api/recipes/${id}`)
             .then(res => {
                 const recipe = res.data;
                 if (!recipe)

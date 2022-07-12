@@ -22,7 +22,7 @@ function RecipesPage({ filterOptions }) {
 
     useEffect(() => {
         axios
-            .get('/db/recipes')
+            .get('/api/recipes')
             .then(res => {
                 const r = res.data;
                 setRecipes(r);

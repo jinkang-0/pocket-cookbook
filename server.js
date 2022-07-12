@@ -13,7 +13,7 @@ app.use(cors());
 
 // setup db
 const dbo = require('./connect');
-app.use(require('./routes/recipes'));
+app.use(require('./api/recipes'));
 
 // production
 if (process.env.NODE_ENV === 'production') {

@@ -78,7 +78,7 @@ function AddRecipePage() {
         };
 
         axios
-            .post('/db/recipes/add', recipe)
+            .post('/api/recipes/add', recipe)
             .then(res => {
                 navigate('/recipes');
             })

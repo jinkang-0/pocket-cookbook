@@ -13,7 +13,7 @@ function VerificationPage() {
 
     useEffect(() => {
         axios
-            .get('/db/verification')
+            .get('/api/verification')
             .then(res => {
                 const r = res.data;
                 setCode(r.code);
