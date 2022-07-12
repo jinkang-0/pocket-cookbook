@@ -21,7 +21,7 @@ function RecipesPage({ filterOptions }) {
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch('http://localhost:5000/recipes');
+            const res = await fetch('/db/recipes');
             const r = await res.json();
             setRecipes(r);
             setDisplayed(r);

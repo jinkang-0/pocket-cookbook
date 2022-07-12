@@ -76,7 +76,7 @@ function AddRecipePage() {
             note: form.note
         };
 
-        await fetch("http://localhost:5000/recipes/add", {
+        await fetch("/db/recipes/add", {
             method: "POST",
             body: JSON.stringify(recipe),
             headers: {

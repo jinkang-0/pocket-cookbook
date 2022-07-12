@@ -22,7 +22,7 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
 
     useEffect(() => {
         async function fetchData() {
-            const res = await fetch('http://localhost:5000/recipes');
+            const res = await fetch('/db/recipes');
             const data = await res.json();
             setRecipes(data);
         }

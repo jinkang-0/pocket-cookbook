@@ -12,7 +12,7 @@ function VerificationPage() {
 
     useEffect(() => {
         async function fetchCode() {
-            const res = await fetch('http://localhost:5000/verification');
+            const res = await fetch('/db/verification');
             const r = await res.json();
             setCode(r.code);
         }

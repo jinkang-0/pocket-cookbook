@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PlanningRouter from "./pages/PlanningRouter";
 import MenuPage from "./pages/MenuPage";
 import RecipesPage from "./pages/RecipesPage";

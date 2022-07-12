@@ -42,7 +42,7 @@ function RecipeViewPage() {
                 return navigate('/error');
 
             const id = params.id.toString();
-            const res = await fetch(`http://localhost:5000/recipes/${id}`);
+            const res = await fetch(`/id/recipes/${id}`);
 
             if (!res.ok) {
                 navigate('/error');
