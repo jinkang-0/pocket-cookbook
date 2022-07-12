@@ -2,13 +2,13 @@
 .vscode
 
 # dependencies
-/server/node_modules
+/node_modules
 /client/node_modules
 /client/.pnp.js
 /client/.pnp
 
 # secrets
-/server/config.env
+config.env
 
 # testing
 /client/coverage
