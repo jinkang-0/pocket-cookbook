@@ -128,7 +128,7 @@ function RecipeViewPage() {
                         {recipe.diet === "Vegetarian" && <LeafIcon />}
                         {recipe.diet === "Vegan" && <TreeIcon />}
                     </h1>
-                    <span className={styles.source}>Source: {recipe.source}</span>
+                    <span className={styles.source}>Source: <i>{recipe.source}</i></span>
                     <p>{recipe.description}</p>
                     <span className={styles.misc}>
                         {recipe.time && (
