@@ -13,7 +13,7 @@ function RecipesPage({ filterOptions }) {
     const [recipes, setRecipes] = useState([]);
     const [displayed, setDisplayed] = useState([]);
     const [filters, setFilters] = useState({
-        "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry"],
+        "Meal": ["Breakfast", "Lunch", "Dinner", "Beverage", "Snack", "Dessert", "Sauce/Dip", "Soup", "Pastry", "Bread"],
         "Allergens": ["Shellfish", "Nuts", "Wheat", "Fish", "Milk", "Egg", "Soy", "Sesame"],
         "Heat": "Any",
         "Diet": "All",

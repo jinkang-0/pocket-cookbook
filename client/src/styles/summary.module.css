@@ -178,6 +178,14 @@
     display: block;
 }
 
+.expanded section h3 {
+    font-weight: 500;
+}
+
+.expanded section .note {
+    white-space: pre-wrap;
+}
+
 
 /* media queries */
 

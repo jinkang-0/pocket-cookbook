@@ -139,9 +139,9 @@ function SummaryPage({ selected }) {
                                         );
                                     })}
                                 </ul>
-                                <hr className={styles.divider} />
                                 {(s.optionalIngredients) && (
                                     <>
+                                        <hr className={styles.divider} />
                                         <p>Optional</p>
                                         <ul>
                                             {s.optionalIngredients.map(i => {
@@ -180,7 +180,7 @@ function SummaryPage({ selected }) {
                                     {s.note && (
                                         <div>
                                             <h3>Note</h3>
-                                            {s.note}
+                                            <p className={styles.note}>{s.note}</p>
                                         </div>
                                     )}
                                 </section>
