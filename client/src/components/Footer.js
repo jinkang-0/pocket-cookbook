@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import GithubIcon from '../icons/GithubIcon';
 import InstagramIcon from '../icons/InstagramIcon';
 import LinkedInIcon from '../icons/LinkedInIcon';
@@ -13,15 +13,15 @@ function Footer() {
 
   return (
     <footer>
-        <Link to="#">
+        <a href="https://www.instagram.com/zdrm0/" rel="noreferrer" target="_blank">
             <InstagramIcon />
-        </Link>
-        <Link to="#">
+        </a>
+        <a href="https://www.linkedin.com/in/jinkang-fang-64b6021b3/" rel="noreferrer" target="_blank">
             <LinkedInIcon />
-        </Link>
-        <Link to="#">
+        </a>
+        <a href="https://github.com/jinkang-0" rel="noreferrer" target="_blank">
             <GithubIcon />
-        </Link>
+        </a>
     </footer>
   )
 }
