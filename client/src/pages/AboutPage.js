@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 import styles from '../styles/about.module.css';
+import globalStyles from "../styles/global.module.css";
 
 function AboutPage() {
+
+    const theme = useContext(ThemeContext);
+
     return (
-        <>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <header className={styles.intro}>
                 <h1>Recipes, made convenient</h1>
                 <p>
@@ -21,7 +26,7 @@ function AboutPage() {
                     It started off as a design on Figma, then transformed into this using a MERN stack when my free time got out of hand over the summer.
                 </span>
             </section>
-        </>
+        </div>
     );
 }
 

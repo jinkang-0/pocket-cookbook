@@ -1,8 +1,33 @@
+/* main body container */
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background);
+    color: var(--primary);
+}
+
+.container > div {
+    width: 100%;
+    padding: 0 10vw;
+}
+
+.container > h1 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+
 /* banner */
 
 .container > .banner {
     width: 100%;
-    background: #E7F1F1;
+    background: var(--banner);
     display: flex;
     justify-content: space-between;
     position: sticky;
@@ -17,6 +42,7 @@
 
 .banner > button {
     background: var(--secondary);
+    color: var(--primary);
     outline: none;
     border: none;
     font-family: 'Quicksand', sans-serif;
@@ -36,28 +62,6 @@
     box-shadow: 2px 2px 14px rgba(0, 0, 0, .25);
 }
 
-
-/* main body container */
-
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container > div {
-    width: 100%;
-    padding: 0 10vw;
-}
-
-.container > h1 {
-    text-align: center;
-    font-weight: normal;
-    font-size: 3rem;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-}
 
 
 /* filter selection options */
@@ -99,7 +103,7 @@
 
 .options input[type="radio"]:checked,
 .options input[type="checkbox"]:checked {
-    background-color: var(--footer);
+    background-color: var(--checked);
 }
 
 
@@ -120,7 +124,8 @@
 .filter input {
     flex: 2;
     margin-right: 2rem;
-    background: #F6F6F6;
+    background: var(--alternate);
+    color: var(--primary);
     border: none;
     outline: none;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, .25);
@@ -131,7 +136,7 @@
 }
 
 .filter input::selection {
-    background: lightblue;
+    background: var(--highlight);
 }
 
 .filter input:focus {
@@ -140,6 +145,7 @@
 
 .filter button {
     background: var(--secondary);
+    color: var(--icon);
     outline: none;
     border: none;
     font-family: 'Quicksand', sans-serif;
@@ -173,7 +179,8 @@
 
 .recipes {
     width: 100%;
-    gap: 2rem;
+    gap: 4rem;
+    row-gap: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 8rem;
@@ -264,6 +271,7 @@
 }
 
 .recipe .tags span {
+    color: var(--footer);
     background: var(--tag);
     padding: .1rem .75rem;
     font-weight: 500;
@@ -290,7 +298,7 @@
 }
 
 .recipe.selected {
-    background: #ECF2F4;
+    background: var(--selected);
 }
 
 
@@ -300,6 +308,10 @@
 
     .container > div {
         padding: 0 5vw;
+    }
+
+    .recipes {
+        gap: 2rem;
     }
 
 }
@@ -355,6 +367,7 @@
 
     .recipes {
         grid-template-columns: 1fr;
+        row-gap: 4rem;
     }
 
 }

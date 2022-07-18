@@ -6,6 +6,8 @@
     flex-direction: column;
     align-items: center;
     padding: 4rem 18vw;
+    background: var(--background);
+    color: var(--primary);
 }
 
 

@@ -1,15 +1,18 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import styles from "../styles/planning.module.css";
 import Option from "../components/Option";
 import SearchBar from '../components/SearchBar.js';
 import SelectableRecipe from '../components/SelectableRecipe.js';
+import { ThemeContext } from "../ThemeContext";
+import styles from "../styles/planning.module.css";
+import globalStyles from "../styles/global.module.css";
 
 function PlanningPage({ selected, setSelected, filterOptions }) {
 
     const navigate = useNavigate();
+    const theme = useContext(ThemeContext);
 
     const [recipes, setRecipes] = useState([]);
     const [displayed, setDisplayed] = useState([]);
@@ -79,7 +82,7 @@ function PlanningPage({ selected, setSelected, filterOptions }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             {(selected.length > 0) && (
                 <div className={styles.banner}>
                     <p>When you're ready, click the Ready button on the right to continue.</p>

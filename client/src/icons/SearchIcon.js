@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/icon.module.css";
 
 function SearchIcon() {
     return (
@@ -15,6 +16,7 @@ function SearchIcon() {
                 r="15.315"
                 stroke="#3E2F5B"
                 strokeWidth="5"
+                className={styles.stroke}
             />
             <rect
                 width="5.5288"
@@ -22,6 +24,7 @@ function SearchIcon() {
                 rx="2.7644"
                 transform="matrix(-0.707107 0.707107 0.707107 0.707107 30.902 26.9925)"
                 fill="#3E2F5B"
+                className={styles.fill}
             />
         </svg>
     );

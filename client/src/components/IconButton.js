@@ -1,8 +1,8 @@
 import React from 'react'
 
-function IconButton({ icon }) {
+function IconButton({ icon, onClick }) {
   return (
-    <button>{icon}</button>
+    <button onClick={onClick}>{icon}</button>
   )
 }
 

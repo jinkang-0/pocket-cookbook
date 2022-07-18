@@ -17,6 +17,7 @@ function SoyIcon() {
                     strokeWidth="5.25"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={styles.stroke}
                 />
                 <path
                     d="M35.4375 15.75C35.4375 15.75 35.4375 26.25 26.25 36.75C17.0625 47.25 8.30159 49.4812 5.25002 45.9375C2.19846 42.3937 5.25002 32.8125 14.4375 23.625C23.625 14.4375 35.4375 15.75 35.4375 15.75Z"
@@ -24,14 +25,17 @@ function SoyIcon() {
                     strokeWidth="5.25"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={styles.stroke}
                 />
                 <path
                     d="M35.7565 39.2542C37.5687 39.2542 39.0377 37.7851 39.0377 35.973C39.0377 34.1608 37.5687 32.6917 35.7565 32.6917C33.9443 32.6917 32.4752 34.1608 32.4752 35.973C32.4752 37.7851 33.9443 39.2542 35.7565 39.2542Z"
                     fill="#3E2F5B"
+                    className={styles.fill}
                 />
                 <path
                     d="M34.444 48.4417C36.2562 48.4417 37.7252 46.9726 37.7252 45.1605C37.7252 43.3483 36.2562 41.8792 34.444 41.8792C32.6318 41.8792 31.1627 43.3483 31.1627 45.1605C31.1627 46.9726 32.6318 48.4417 34.444 48.4417Z"
                     fill="#3E2F5B"
+                    className={styles.fill}
                 />
             </svg>
             <span className={styles.tooltip}>Soy</span>

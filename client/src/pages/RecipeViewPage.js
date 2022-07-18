@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import PalmIcon from "../icons/PalmIcon";
@@ -15,9 +15,13 @@ import LeafIcon from "../icons/LeafIcon";
 import MeatIcon from "../icons/MeatIcon";
 import TreeIcon from "../icons/TreeIcon";
 import FireIcon from "../icons/FireIcon";
+import { ThemeContext } from "../ThemeContext";
 import styles from "../styles/recipeview.module.css";
+import globalStyles from "../styles/global.module.css";
 
 function RecipeViewPage() {
+
+    const theme = useContext(ThemeContext);
 
     const [recipe, setRecipe] = useState({
         name: "N/A",
@@ -116,7 +120,7 @@ function RecipeViewPage() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <div className={styles.intro}>
                 <div className={styles.imgContainer}>
                     <img src={recipe.img} alt={recipe.name} />

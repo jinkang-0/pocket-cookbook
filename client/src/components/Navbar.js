@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "../styles/global.module.css";
 import ChefHatIcon from "../icons/ChefHatIcon";
+import { ThemeContext } from "../ThemeContext";
+import styles from "../styles/global.module.css";
 
 function Navbar() {
+
     const location = useLocation();
+    const theme = useContext(ThemeContext);
 
     if (location.pathname === "/") return null;
-
+    
     return (
-        <nav>
+        <nav className={styles[theme]}>
             <Link className={styles.home} to="/">
                 <ChefHatIcon />
             </Link>

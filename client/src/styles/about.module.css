@@ -1,3 +1,11 @@
+/* main body container */
+
+.container {
+    background: var(--background);
+    color: var(--primary);
+}
+
+
 /* website intro */
 
 .intro {
@@ -39,7 +47,7 @@
     padding: 0 8vw;
     gap: 2rem;
     margin-left: 2rem;
-    margin-bottom: 10rem;
+    padding-bottom: 10rem;
 }
 
 .profile h3 {

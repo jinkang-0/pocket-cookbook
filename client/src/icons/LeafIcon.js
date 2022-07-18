@@ -3,7 +3,7 @@ import styles from "../styles/icon.module.css";
 
 function LeafIcon() {
     return (
-        <div className={styles.iconBox}>
+        <div className={`${styles.iconBox} ${styles.fill}`}>
             <svg
                 width="63"
                 height="63"

@@ -1,14 +1,18 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import styles from "../styles/recipes.module.css";
+import globalStyles from "../styles/global.module.css";
 import Option from "../components/Option";
 import SearchBar from "../components/SearchBar";
 import IconButton from "../components/IconButton";
 import SearchIcon from "../icons/SearchIcon";
 import SimplifiedRecipe from "../components/SimplifiedRecipe";
+import { ThemeContext } from "../ThemeContext";
 
 function RecipesPage({ filterOptions }) {
+
+    const theme = useContext(ThemeContext);
 
     const [recipes, setRecipes] = useState([]);
     const [displayed, setDisplayed] = useState([]);
@@ -71,7 +75,7 @@ function RecipesPage({ filterOptions }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <div className={styles.sidebar}>
                 {filterOptions.map((opt) => {
                     return (

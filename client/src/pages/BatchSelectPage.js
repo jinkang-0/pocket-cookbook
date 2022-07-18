@@ -1,10 +1,14 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import RecipeBatchSelect from "../components/RecipeBatchSelect";
+import { ThemeContext } from "../ThemeContext";
 import styles from "../styles/batchselect.module.css";
+import globalStyles from "../styles/global.module.css";
 
 function BatchSelectPage({ selected, setSelected }) {
+
+    const theme = useContext(ThemeContext);
 
     const multipliers = useRef(selected.map(s => {return {id: s._id, multiplier: "1"}}));
     const navigate = useNavigate();
@@ -34,7 +38,7 @@ function BatchSelectPage({ selected, setSelected }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <h1>Select Batches</h1>
             <div className={styles.ingredientsGrid}>
                 {selected.map(s => {

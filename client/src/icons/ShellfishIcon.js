@@ -17,11 +17,13 @@ function ShellfishIcon() {
                     strokeWidth="5.25"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={styles.stroke}
                 />
                 <path
                     d="M34.125 30.1875L26.25 14.4375"
                     stroke="#3E2F5B"
                     strokeWidth="5.25"
+                    className={styles.stroke}
                 />
                 <path
                     d="M23.625 5.25H42C44.4367 5.25 46.7736 6.21797 48.4965 7.94096C50.2195 9.66395 51.1875 12.0008 51.1875 14.4375V14.4375"
@@ -29,10 +31,12 @@ function ShellfishIcon() {
                     strokeWidth="5.25"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={styles.stroke}
                 />
                 <path
                     d="M39.375 23.625C40.8247 23.625 42 22.4497 42 21C42 19.5503 40.8247 18.375 39.375 18.375C37.9253 18.375 36.75 19.5503 36.75 21C36.75 22.4497 37.9253 23.625 39.375 23.625Z"
                     fill="#3E2F5B"
+                    className={styles.fill}
                 />
             </svg>
             <span className={styles.tooltip}>Shellfish</span>

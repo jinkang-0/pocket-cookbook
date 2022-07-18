@@ -22,3 +22,19 @@
 }
 
 
+/* handle themes */
+
+.fill path,
+path.fill,
+circle.fill,
+rect.fill {
+    fill: var(--icon);
+}
+
+.stroke path,
+path.stroke,
+circle.stroke,
+rect.stroke {
+    stroke: var(--icon);
+}
+

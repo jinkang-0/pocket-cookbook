@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import TextField from "../components/TextField";
@@ -9,9 +9,13 @@ import ListField from "../components/ListField";
 import IngredientField from "../components/IngredientField";
 import MultiSelectField from "../components/MultiSelectField";
 import TextboxField from "../components/TextboxField";
+import { ThemeContext } from "../ThemeContext";
 import styles from "../styles/addrecipe.module.css";
+import globalStyles from "../styles/global.module.css";
 
 function AddRecipePage() {
+
+    const theme = useContext(ThemeContext);
 
     const [form, setForm] = useState({diet: "All", heat: "None"});
     const [error, setError] = useState({name: false});
@@ -88,7 +92,7 @@ function AddRecipePage() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <h1>Add Recipe</h1>
             <form className={styles.form} >
                 <div className={styles.errors}>

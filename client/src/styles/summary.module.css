@@ -8,6 +8,8 @@
     grid-template-rows: max-content;
     padding: 2rem 7vw;
     gap: 2rem;
+    background: var(--background);
+    color: var(--primary);
 }
 
 .container svg {
@@ -85,6 +87,8 @@
 .ingredients hr {
     width: 50%;
     margin: 2rem auto;
+    background: var(--unchecked);
+    border: 1px solid var(--unchecked);
 }
 
 .ingredients hr.divider {
@@ -148,7 +152,7 @@
 .recipeBox section {
     box-shadow: 0 4px 7px rgba(0, 0, 0, .25);
     padding: .75rem;
-    background: #f5f2f2;
+    background: var(--alternate);
     display: none;
 }
 

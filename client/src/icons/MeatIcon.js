@@ -3,7 +3,7 @@ import styles from "../styles/icon.module.css";
 
 function MeatIcon() {
     return (
-        <div className={styles.iconBox}>
+        <div className={`${styles.iconBox} ${styles.stroke}`}>
             <svg
                 width="63"
                 height="63"

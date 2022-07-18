@@ -11,6 +11,8 @@ font-family: 'Roboto Mono', monospace;
     display: grid;
     place-items: center;
     padding-bottom: 2rem;
+    background: var(--background);
+    color: var(--primary);
 }
 
 .container > div {
@@ -47,6 +49,7 @@ font-family: 'Roboto Mono', monospace;
     letter-spacing: 1rem;
     font-family: 'Roboto Mono', monospace;
     margin-bottom: .5rem;
+    color: var(--primary);
 }
 
 .code::before {

@@ -1,12 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import { ThemeContext } from "../ThemeContext";
 import styles from "../styles/verification.module.css";
+import globalStyles from "../styles/global.module.css";
 
 function VerificationPage() {
 
     const cookies = new Cookies();
+    const theme = useContext(ThemeContext);
 
     const [code, setCode] = useState("");
     const navigate = useNavigate();
@@ -31,7 +34,7 @@ function VerificationPage() {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             <div>
                 <h2>Enter the verification code to continue</h2>
                 <div className={styles.code}>

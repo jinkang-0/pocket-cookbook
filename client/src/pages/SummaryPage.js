@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import ShellfishIcon from "../icons/ShellfishIcon";
@@ -15,8 +15,12 @@ import TreeIcon from "../icons/TreeIcon";
 import FireIcon from "../icons/FireIcon";
 import DropdownArrowIcon from "../icons/DropdownArrowIcon";
 import styles from "../styles/summary.module.css";
+import globalStyles from "../styles/global.module.css";
+import { ThemeContext } from "../ThemeContext";
 
 function SummaryPage({ selected }) {
+
+    const theme = useContext(ThemeContext);
 
     const navigate = useNavigate();
     const [expanded, setExpanded] = useState([]);
@@ -106,7 +110,7 @@ function SummaryPage({ selected }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${globalStyles[theme]}`}>
             {(sumAllergens.length > 0) && (
                 <div className={styles.allergens}>
                     <span>Allergens:</span>
