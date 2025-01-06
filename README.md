@@ -10,7 +10,7 @@ It's good to recollect on your past achievements once in a while though. Perhaps
 
 ### Setting Up Local Development
 
-Being a MERN stack, this project has a separate server and client environment. Both must be configured before you can start running the project.
+Being a MERN stack project, this project has a separate server and client environment. Both must be configured before you can start running the project.
 
 #### Server
 
@@ -20,7 +20,7 @@ For the server, you have to first setup a `.env` file in the root folder, then s
 ATLAS_URI=mongodb+srv://******.mongodb.net/?retryWrites=true&w=majority
 ```
 
-The project pulls a database named `pocket-cookbook` with a collection called `recipes`.
+The project pulls from a database named `pocket-cookbook` with a collection called `recipes`.
 
 Each recipe follows this schema:
 
@@ -45,7 +45,7 @@ interface Recipe {
 }
 ```
 
-An exported version of the MongoDB database can be found at `pocket-cookbook.recipes.json` in the root folder.
+An exported version of the MongoDB database can be found in `pocket-cookbook.recipes.json` in the root folder.
 
 Before starting the server, make sure you have all the packages installed.
 
@@ -62,9 +62,6 @@ npm run start
 You should see something like this in the console:
 
 ```bash
-> pocket-cookbook@1.0.0 start
-> nodemon server.js
-
 [nodemon] 2.0.19
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching path(s): *.*
