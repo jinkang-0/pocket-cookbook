@@ -2,13 +2,15 @@
 
 This project was made in the summer of 2022, when I took up a stipened program at The OUSD Central Kitchen. It was an amazing program that took me from harvesting my own herbs and vegetables to using the various cooking equipment to create a delicious meal.
 
-Naturally, studying under professionals, I picked up some delicious recipes along the journey. As I had been learning web development at the time, I wanted to make something at the end of the program that demonstrated what I learned over the summer.
+Naturally, studying under professionals, I picked up some delicious recipes along the journey. And, as I had been learning web development at the time, I wanted to make something at the end of the program, as a capstone, let's say. Thus, Pocket Cookbook was born. The project was made using the MERN stack, which I learned over the summer, and showcased all the recipes I learned in the program.
 
-Thus, Pocket Cookbook was born. The project was made using the MERN stack, which I learned over that summer. It was initially hosted on Heroku. When the service discontinued their free plan later that year, I took up the GitHub student offer with Heroku to keep the website hosted on the platform. Unfortunately, the 24 month window has recently passed, and I don't currently have the capacity to continue hosting the website, so I've opted to turn it into a GitHub repo archive.
+This project was initially hosted on Heroku. When the service discontinued their free plan later that year, I took up the GitHub student offer with Heroku to keep the website hosted on the platform. Unfortunately, the 24 month window has passed, and I don't have the capacity to continue hosting the website, at least at the time of writing. So, I've opted to turn it into a GitHub repo archive.
 
 It's good to recollect on your past achievements once in a while though. Perhaps one day I'll remake the project into a true pocket cookbook.
 
 ### Setting Up Local Development
+
+If you want to see how the website looks like, follow the steps in this section to host the website locally. Be warned: it may take a lot of effort to set up.
 
 Being a MERN stack project, this project has a separate server and client environment. Both must be configured before you can start running the project.
 
