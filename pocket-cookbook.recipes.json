@@ -1,0 +1,850 @@
+[{
+  "_id": {
+    "$oid": "62ce3a712487d1f846602c88"
+  },
+  "name": "Chimichurri",
+  "source": "Michelle Bernstein",
+  "img": "https://cdn.loveandlemons.com/wp-content/uploads/2020/02/chimichurri.jpg",
+  "diet": "Vegan",
+  "heat": "Low",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "Chimichurri is an uncooked sauce used both as an ingredient in cooking and as a table condiment for grilled meat. Found in Argentinian and Uruguayan cuisines, the sauce comes in a green and red version. It is made of finely chopped parsley, minced garlic, olive oil, oregano and red wine vinegar.",
+  "ingredients": [
+    {
+      "name": "parsley, coarsely chopped",
+      "units": "cup",
+      "quantity": ".25"
+    },
+    {
+      "name": "cilantro, coarsely chopped",
+      "units": "cup",
+      "quantity": ".25"
+    },
+    {
+      "name": "red onion, minced",
+      "quantity": ".5"
+    },
+    {
+      "name": "red wine vinegar",
+      "units": "tbs",
+      "quantity": "3"
+    },
+    {
+      "name": "large garlic cloves, minced",
+      "quantity": "4",
+      "optionalQuantity": {
+        "quantity": "2.5",
+        "units": "tbs"
+      }
+    },
+    {
+      "name": "oregano leaves",
+      "units": "tbs",
+      "quantity": "2"
+    },
+    {
+      "name": "crushed red pepper",
+      "units": "tbs",
+      "quantity": "2"
+    },
+    {
+      "name": "jalapeño, minced",
+      "quantity": "1"
+    },
+    {
+      "name": "extra-virgin olive oil",
+      "units": "cup",
+      "quantity": ".5"
+    },
+    {
+      "name": "Kosher salt and freshly ground pepper"
+    }
+  ],
+  "time": "10 minutes",
+  "yield": "1 cup",
+  "directions": [
+    "Place all of the ingredients into a food processor and process until smooth",
+    "Season with salt and pepper to taste"
+  ],
+  "note": "If you don't have a food processor, you can combine all of the ingredients in a bowl by hand"
+},
+{
+  "_id": {
+    "$oid": "62c8d8893991d098b6486338"
+  },
+  "name": "Pastry Cream",
+  "source": "King Arthur Baking",
+  "img": "https://www.kingarthurbaking.com/sites/default/files/styles/featured_image/public/recipe_legacy/1464-3-large.jpg?itok=yWijl0mQ",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Wheat",
+    "Milk",
+    "Egg"
+  ],
+  "heat": "None",
+  "tags": [
+    "Pastry"
+  ],
+  "description": "This rich, creamy filling, while delicious as is, can also be flavored in an almost infinite number of ways to create the perfect complement to your cake, pie, or pastry.",
+  "ingredients": [
+    {
+      "name": "milk, whole preferred; divided",
+      "quantity": "3",
+      "units": "cup"
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": ".5",
+      "units": "cup"
+    },
+    {
+      "name": "salt",
+      "quantity": ".25",
+      "units": "tsp"
+    },
+    {
+      "name": "vanilla extract",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "cornstarch",
+      "quantity": ".25",
+      "units": "cup"
+    },
+    {
+      "name": "all-purpose flour",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "large egg yolks",
+      "quantity": "4"
+    },
+    {
+      "name": "butter",
+      "quantity": "4",
+      "units": "tbs"
+    },
+    {
+      "name": "heavy cream, whipped to soft peaks; optional, for a softer filling",
+      "quantity": "1",
+      "units": "cup"
+    }
+  ],
+  "time": "45 min",
+  "yield": "3 cup",
+  "directions": [
+    "In a medium-sized saucepan, stir 2.5 cups milk, sugar, salt, and vanilla beans (if using vanilla extract, add it at the end)",
+    "Bring the mix to a simmer over medium heat, stirring to dissolve the sugar",
+    "Meanwhile, whisk the cornstarch, flour, and egg yolks with the remaining 1/2 cup milk",
+    "Whisk some of the hot milk mixture with the egg yolks to temper them. This keeps the yolks from turning to scrambled eggs when you add them to the simmering milk.",
+    "Pour the egg/milk mixture back into the remaining simmering milk. Doing this through a strainer will help prevent lumps later.",
+    "Bring to a boil, stirring constantly with a whisk, until the mixture thickens and you see the boiling bubbles reach the center of the saucepan.",
+    "Remove from the heat and strain through a fine strainer into a bowl set in an ice bath.",
+    "Stir in the butter and vanilla extract. If you're going to flavor the pastry cream with chocolate or some other flavor, this is the time to do it (see variations in notes).",
+    "Rub a piece of butter over the surface of the cream, top with a piece of plastic wrap (make sure it touches the top of the pastry cream so it doesn't develop a skin), then refrigerate until cool.",
+    "Use chilled pastry cream as is for a sliceable cream pie, or a stiff filling for éclairs. Fold in the whipped cream, just before using, for a softer filling."
+  ],
+  "prepDirections": [
+    "Set up a bowl with a strainer over an ice bath to chill",
+    "Ready a saucepan and whisk"
+  ],
+  "note": "Pastry cream will keep, covered in the refrigerator, for up to 5 days. After that it may start to weep.\n\nTo use as a pie filling, increase the sugar to 3/4 cup (149g)\n\nVariants\nButterscotch: Add 1/4 tsp butter-rum flavor and/or 1 cup (170g) butterscotch chips to the pastry cream after straining, stirring until the chips have melted.\n\nCaramel: Add 3/4 cup chopped caramel (213g, or 21 to 23 unwrapped individual caramels) to the hot, strained pastry cream, stirring until melted and the mixture is smooth.\n\nChocolate: Add 1 cup (170g) chopped semisweet or bittersweet chocolate to the hot, strained pastry cream, stirring until melted and the mixture is smooth.\n\nHazelnut: Omit the butter and increase the sugar to 3/4 cup (149g). Add 3/4 cup (234g) praline paste to the hot, strained pastry cream, stirring until combined.\n\nOrange: Increase the sugar to 3/4 cup (149g). Add 1 teaspoon orange extract, 1/4 teaspoon orange oil, or 3 tablespoons grated orange zest to the hot, strained pastry cream.\n\nPeanut: Add 3/4 cup (203g) smooth peanut butter to the hot pastry cream, stirring until melted and the mixture is smooth. If you're using natural or freshly-made peanut butter, omit the butter from the recipe to prevent the pastry cream from becoming greasy.\n\nPistachio: Omit the butter and increase the sugar to 3/4 cup (149g). Add 3/4 cup (234g) pistachio paste or blanched puréed pistachio nutmeats."
+},
+{
+  "_id": {
+    "$oid": "62ce326b8b915f9d43369c79"
+  },
+  "name": "Hummus",
+  "source": "Jerusalem: A Cookbook",
+  "img": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2F28af3f00835c1564f1806eddff49a90a0f22dc79",
+  "diet": "Vegan",
+  "allergens": [
+    "Sesame"
+  ],
+  "heat": "None",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "Hummus is a Middle Eastern dip, spread, or savory dish made from cooked, mashed chickpeas blended with tahini, lemon juice, and garlic. The standard garnish in the Middle East includes olive oil, a few whole chickpeas, parsley, and paprika.",
+  "ingredients": [
+    {
+      "name": "chickpeas",
+      "units": "cup",
+      "quantity": "3.5"
+    },
+    {
+      "name": "light tahini paste",
+      "units": "cup",
+      "quantity": "1.125"
+    },
+    {
+      "name": "freshly squeezed lemon juice",
+      "units": "tbs",
+      "quantity": "4"
+    },
+    {
+      "name": "garlic cloves, crushed",
+      "quantity": "4"
+    },
+    {
+      "name": "ice-cold water",
+      "units": "tbs",
+      "quantity": "6.5",
+      "optionalQuantity": {
+        "quantity": "100",
+        "units": "mL"
+      }
+    },
+    {
+      "name": "Salt"
+    }
+  ],
+  "optionalIngredients": [
+    {
+      "name": "Chickpeas"
+    },
+    {
+      "name": "Olive oil"
+    },
+    {
+      "name": "Parsley"
+    },
+    {
+      "name": "Paprika"
+    }
+  ],
+  "time": "10 minutes",
+  "yield": "5 cups",
+  "directions": [
+    "Place the chickpeas in a food processor and process until you get a stiff paste",
+    "With the machine still running, add the tahini paste, lemon juice, garlic, and 1 1/2 tsp salt",
+    "Slowly drizzle in the iced water and allow it to mix for about 5 minutes, until you get a very smooth and creamy paste"
+  ],
+  "prepDirections": [
+    "Prepare a food processor to process the chickpeas"
+  ]
+},
+{
+  "_id": {
+    "$oid": "62c795d0b84ac38c271612c7"
+  },
+  "name": "Jerk Sauce",
+  "source": "Kwame Onwuachi",
+  "img": "https://i2.wp.com/chilipeppermadness.com/wp-content/uploads/2019/04/Jerk-Marinade-Recipe1.jpg",
+  "diet": "Vegan",
+  "allergens": [
+    "Soy"
+  ],
+  "heat": "High",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "A classic Jamaican hot sauce.",
+  "ingredients": [
+    {
+      "name": "soy sauce",
+      "quantity": ".25",
+      "units": "cup"
+    },
+    {
+      "name": "Worcestershire sauce",
+      "quantity": "2",
+      "units": "tbs"
+    },
+    {
+      "name": "chopped scallions (~3 scallions)",
+      "quantity": "2",
+      "units": "tbs"
+    },
+    {
+      "name": "fresh thyme leaves",
+      "quantity": "2",
+      "units": "tbs"
+    },
+    {
+      "name": "minced garlic (~3 cloves)",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "minced peeled ginger",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "tamarind paste",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "ground allspice",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "packed dark brown sugar",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "ground cinnamon",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "ground cloves",
+      "quantity": ".125",
+      "units": "tsp"
+    },
+    {
+      "name": "bay leaf",
+      "quantity": "1"
+    },
+    {
+      "name": "Scotch bonnet chile, minced",
+      "quantity": "1"
+    },
+    {
+      "name": "Kosher salt"
+    }
+  ],
+  "time": "10 min",
+  "yield": "1 cup",
+  "directions": [
+    "Place all ingredients in a food processor (or blender) and process until smooth",
+    "Season with salt and pepper to taste"
+  ],
+  "prepDirections": [
+    "Prepare a food processor or blender to mix the sauce",
+    "Prepare a container to put the finished product"
+  ],
+  "note": "If you don't have a food processor or blender, you can also mix the ingredients in a bowl by hand."
+},
+{
+  "_id": {
+    "$oid": "62c8cae13991d098b6486336"
+  },
+  "name": "Classic Hot Sauce",
+  "source": "Mark Bittman",
+  "img": "https://www.alphafoodie.com/wp-content/uploads/2020/12/Chilli-Sauce-1-of-1.jpeg",
+  "diet": "Vegetarian",
+  "heat": "Medium",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "Classic hot sauce with some extra flavors.",
+  "ingredients": [
+    {
+      "name": "relatively mild hot sauce",
+      "quantity": "0.333333333",
+      "units": "cup"
+    },
+    {
+      "name": "melted butter",
+      "quantity": "4",
+      "units": "tbs"
+    },
+    {
+      "name": "sherry vinegar or white vinegar",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "salt and pepper"
+    }
+  ],
+  "time": "5 min",
+  "yield": "5 serving",
+  "directions": [
+    "Combine the ingredients together in a large bowl"
+  ],
+  "prepDirections": [
+    "Prepare a large bowl and a tool to mix the sauce"
+  ]
+},
+{
+  "_id": {
+    "$oid": "62c8e2ab3991d098b648633a"
+  },
+  "name": "Scones",
+  "source": "King Arthur Baking",
+  "img": "https://www.simplyrecipes.com/thmb/BeUzT6M6r8vUJ1TVfkV_yVvbNiY=/2832x2832/smart/filters:no_upscale()/Simply-Recipes-American-Scones-LEAD-2-fd686011254d409ba98fc0d559d8a30c.jpg",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Wheat",
+    "Egg",
+    "Milk"
+  ],
+  "heat": "None",
+  "tags": [
+    "Dessert",
+    "Pastry"
+  ],
+  "description": "While this simple vanilla scone is delicious as is, it's also the perfect vehicle for your favorite add-ins; we happen to love dried cranberries and walnuts. Though chocolate chips are tempting too!",
+  "ingredients": [
+    {
+      "name": "all-purpose flour",
+      "quantity": "2.75",
+      "units": "cup"
+    },
+    {
+      "name": "granulated sugar",
+      "quantity": ".3333",
+      "units": "cup"
+    },
+    {
+      "name": "salt",
+      "quantity": ".75",
+      "units": "tsp"
+    },
+    {
+      "name": "baking powder",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "unsalted butter, cold",
+      "quantity": "8",
+      "units": "tbs"
+    },
+    {
+      "name": "large eggs",
+      "quantity": "2"
+    },
+    {
+      "name": "vanilla extract, or flavoring of choice",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "half-and-half or milk",
+      "quantity": ".5",
+      "units": "cup"
+    }
+  ],
+  "optionalIngredients": [
+    {
+      "name": "chopped dried fruits"
+    },
+    {
+      "name": "chocolate or other flavored chips"
+    },
+    {
+      "name": "nuts"
+    },
+    {
+      "name": "Jammy Bits"
+    }
+  ],
+  "time": "58 min",
+  "yield": "12 serving",
+  "directions": [
+    "In a large mixing bowl, whisk together the flour, sugar, salt, and baking powder",
+    "Work in the butter just until the mixture is unevenly crumbly; it's ok for some larger chunks of butter to remain unincorporated",
+    "Stir in the fruit, chips, and/or nuts, if you're using them",
+    "In a separate mixing bowl, whisk together the eggs, vanilla or other liquid flavor, and half-and-half or milk.",
+    "Add the liquid ingredients to the dry ingredients.",
+    "Using a bowl scraper or a large spoon, stir the dough ingredients until all is moistened and holds together",
+    "Line a baking sheet with parchment; if you don't have parchment, just use it without greasing it. Sprinkle a bit of flour atop the parchment or pan.",
+    "Scrape the dough onto the floured parchment or pan, and divide it in half",
+    "Round each half into a 5\" circle (if you haven't incorporated any add-ins); or a 6\" circle (if you've added fruits, nuts, etc). The circles should be about 3/4\" thick",
+    "Using a knife or bench knife that you've run under cold water, slice each circle into 6 wedges",
+    "Brush each circle with milk, and sprinkle with coarse white sparkling sugar or cinnamon sugar",
+    "Carefully pull the wedges away from the center to separate them just a bit; there should be about 1/2\" space between them, at their outer edges",
+    "For best texture and highest rise, place the pan of scones in the freezer for 30 minutes, uncovered.",
+    "While the scones are chilling, preheat the oven to 425°F with a rack in the upper third",
+    "Bake the scones in the upper part of your oven for 18 to 23 minutes, or until they're a light golden brown",
+    "When you pull one away from the others, it should look backed all the way through; the edge shouldn't look wet or unbaked.",
+    "Remove the scones from the oven, and cool briefly on the pan.",
+    "Serve warm; add butter and/or jam if you'd like.",
+    "When the scones are completely cool, wrap them in plastic and store at room temperature for up to several days.",
+    "To reheat room-temperature scones, place on a baking sheet, tent lightly with foil, and warm in a preheated 350°F oven for about 10 minutes."
+  ],
+  "prepDirections": [
+    "Prepare a large mixing bowl and a whisk",
+    "Ready a butter knife to cut the butter and mix the dough ingredients"
+  ],
+  "note": "In the winter, or when it's very dry, use 2/3 cup of milk or half-and-half.\n\nChilling the scones in the freezer relaxes the gluten in the flour, which makes the scones more tender and allows them to rise higher. It also chills the fat, which makes the scones a bit flakier."
+},
+{
+  "_id": {
+    "$oid": "62c8ba7ec21ddf9139a1c426"
+  },
+  "name": "Gochujang-Honey",
+  "source": "Washington Post",
+  "img": "https://www.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2022/01/27/Food/Images/v-essentials-wings0013.jpg?t=20170517",
+  "diet": "Vegan",
+  "allergens": [
+    "Soy"
+  ],
+  "heat": "Medium",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "A sweet, sticky, and mild hot sauce. Great with chicken.",
+  "ingredients": [
+    {
+      "name": "honey",
+      "quantity": "3",
+      "units": "tbs"
+    },
+    {
+      "name": "gochujang, or chile paste of choice",
+      "quantity": "2",
+      "units": "tbs"
+    },
+    {
+      "name": "light or dark brown sugar",
+      "quantity": "2",
+      "units": "tbs"
+    },
+    {
+      "name": "soy sauce",
+      "quantity": "1",
+      "units": "tbs"
+    },
+    {
+      "name": "fresh ginger, minced or finely grated",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "garlic, minced or finely grated",
+      "quantity": "1",
+      "units": "tsp"
+    },
+    {
+      "name": "fine salt",
+      "quantity": ".5",
+      "units": "tsp"
+    }
+  ],
+  "optionalIngredients": [
+    {
+      "name": "Sesame seeds"
+    }
+  ],
+  "time": "10 min",
+  "yield": ".5 cup",
+  "directions": [
+    "In a small saucepan, mix the listed ingredients until combined.",
+    "Set the saucepan over medium-high heat and bring to a boil",
+    "When it starts to boil, reduce the heat to low and simmer until slightly thickened, stirring occasionally (~5 min)",
+    "Remove from heat when it's thickened and pour to a ready container"
+  ],
+  "prepDirections": [
+    "Prepare a saucepan and a spatula for stirring",
+    "Prepare a container to put the sauce in when finished"
+  ],
+  "note": "If paired with chicken, you can choose to add sesame seeds to season!"
+},
+{
+  "_id": {
+    "$oid": "62c8d4243991d098b6486337"
+  },
+  "name": "Pâte à Choux",
+  "source": "Serious Eats",
+  "img": "https://www.kingarthurbaking.com/sites/default/files/2020-08/pate-a-choux.jpg",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Egg",
+    "Milk",
+    "Wheat"
+  ],
+  "heat": "None",
+  "tags": [
+    "Dessert",
+    "Pastry"
+  ],
+  "description": "An important building block in the world of baking and pastry, puffing up when cooked to make everything from cream puffs, profiteroles, and éclairs to Parisian gnocchi, churros, and beignets. It's easy to make, as long as you understand the process.",
+  "ingredients": [
+    {
+      "name": "water",
+      "quantity": "1",
+      "units": "cup"
+    },
+    {
+      "name": "unsalted butter, cut into 1/2-inch cubes",
+      "quantity": "6",
+      "units": "tbs"
+    },
+    {
+      "name": "sugar",
+      "quantity": "2",
+      "units": "tsp"
+    },
+    {
+      "name": "kosher salt, or half as much for table salt",
+      "quantity": ".5",
+      "units": "tsp"
+    },
+    {
+      "name": "all-purpose flour, sifted",
+      "quantity": "128",
+      "units": "g"
+    },
+    {
+      "name": "large eggs",
+      "quantity": "4"
+    }
+  ],
+  "time": "20 min",
+  "directions": [
+    "In a saucepan, combine water/milk, butter, sugar (if using), and salt",
+    "Set the saucepan over high heat and cook until it comes to a rolling boil and the butter has fully melted (~2min)",
+    "Remove the saucepan from heat and add flour, stirring vigorously with a large sturdy spoon or a stiff spatula until no lumps remain",
+    "Return the saucepan to medium-high heat, stirring very frequently, until the dough registers 175°F on an instant-read thermometer; other signs include a thin starchy film forming all over the inside of the saucier and the dough pulling together into a cohesive mass.",
+    "Remove the saucepan from heat and let the batter cool, stirring frequently, until it registers 145°F (you can stir by hand or use a stand mixer on medium speed)",
+    "When cooled, add eggs one at a time, stirring frequently or using a stand mixer at medium speed, waiting for each egg to be fully incorporated before adding the next. A smooth, shiny paste should result at the end.",
+    "Now the choux is ready for use depending on the specific recipe you're making."
+  ],
+  "prepDirections": [
+    "Ready a saucepan and stiff spatula for mixing",
+    "Prepare a container for the ready choux, or a pastry bag and tip if using it to pipe"
+  ],
+  "note": "If it's going to be used for a dessert, a small amount of sugar can be added to gently push it in a sweet direction.\n\nThe choux can be kept up to 2 hours before using at room temperature; keep it in a sealed pastry bag or with plastic wrap pressed against its surface to prevent skin from forming."
+},
+{
+  "_id": {
+    "$oid": "62c8de6b3991d098b6486339"
+  },
+  "name": "Ice Cream Base",
+  "source": "Melissa Clark",
+  "img": "https://photos.bigoven.com/recipe/hero/ice-cream-base-3c7013.jpg",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Milk",
+    "Egg"
+  ],
+  "heat": "None",
+  "tags": [
+    "Dessert"
+  ],
+  "description": "This silky, luscious and very classy custard can be used as the base for any ice cream flavor you can dream up. These particular proportions of milk and cream to egg yolk will give you a thick but not sticky ice cream that feels decadent but not heavy.",
+  "ingredients": [
+    {
+      "name": "heavy cream",
+      "quantity": "2",
+      "units": "cup"
+    },
+    {
+      "name": "whole milk",
+      "quantity": "1",
+      "units": "cup"
+    },
+    {
+      "name": "sugar",
+      "quantity": ".666666",
+      "units": "cup"
+    },
+    {
+      "name": "fine sea salt",
+      "quantity": ".125",
+      "units": "tsp"
+    },
+    {
+      "name": "large egg yolks",
+      "quantity": "6"
+    }
+  ],
+  "optionalIngredients": [
+    {
+      "name": "Your choice of flavoring"
+    }
+  ],
+  "time": "20 min",
+  "yield": "1.5 pt",
+  "directions": [
+    "In a small pot, simmer heavy cream, milk, sugar, and salt until the sugar completely dissolves (~5min)",
+    "Remove the pot from heat",
+    "Whisk yolks together in a separate bowl whilst slowly pouring bits of the pot mixture in, until about a third of the hot cream has been added",
+    "When the yolks are tempered, add them back to the pot with the cream and whisk to mix",
+    "Return the pot to medium-low heat and gently cook until the mixture is thick enough to coat the back of a spoon",
+    "Strain the mix through a fine-mesh sieve into a bowl, then let cool to room temperature",
+    "Cover and refrigerate for at least 4 hours or overnight",
+    "Churn in an ice cream machine according to manufacturers' instructions and serve directly for soft serve, or store in freezer until needed"
+  ],
+  "prepDirections": [
+    "Prepare a pot and optionally, a spatula to stir",
+    "Prepare a separate large bowl and a whisk to mix the egg yolks",
+    "Prepare a fine-mesh sieve to strain the mix"
+  ],
+  "note": "For something a little lighter, use more milk and less cream, as long as the dairy adds up to 3 cups. You can also cut down on egg yolks for a thinner base, but don't go below three.\n\nYou can flavor it any way you like. See the chart here (https://www.nytimes.com/interactive/2014/07/01/dining/the-master-ice-cream-recipe.html) for more than 16 flavor ideas. Or invent your own."
+},
+{
+  "_id": {
+    "$oid": "62ccecad1a93728104a8b967"
+  },
+  "name": "Japanese Milk Bread",
+  "source": "Julia Moskin",
+  "img": "https://static01.nyt.com/images/2014/04/23/dining/23WHITE2/23WHITE2-articleLarge.jpg",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Wheat",
+    "Milk",
+    "Egg"
+  ],
+  "heat": "None",
+  "tags": [
+    "Bread"
+  ],
+  "description": "A lofty, feathery white bread that is a staple at bakeries in Asia. Developed in the 20th century in Japan using tangzhong, a flour-and-water paste traditionally used in China to make buns with a soft, springy texture. It can be shaped into coils or round rolls, like pull-aparts, instead of loaves, or you can paint it with cinnamon sugar or dulce de leche or strawberry jam when you roll it out.",
+  "ingredients": [
+    {
+      "name": "bread flour",
+      "units": "cup",
+      "quantity": "2.8333",
+      "optionalQuantity": {
+        "quantity": "370",
+        "units": "g"
+      }
+    },
+    {
+      "name": "whole milk",
+      "units": "cup",
+      "quantity": ".5",
+      "optionalQuantity": {
+        "quantity": "120",
+        "units": "mL"
+      }
+    },
+    {
+      "name": "sugar",
+      "units": "cup",
+      "quantity": ".25",
+      "optionalQuantity": {
+        "quantity": "60",
+        "units": "g"
+      }
+    },
+    {
+      "name": "active dry yeast",
+      "units": "tsp",
+      "quantity": "2",
+      "optionalQuantity": {
+        "quantity": "7",
+        "units": "g"
+      }
+    },
+    {
+      "name": "salt",
+      "units": "tsp",
+      "quantity": "1",
+      "optionalQuantity": {
+        "quantity": "4",
+        "units": "g"
+      }
+    },
+    {
+      "name": "egg",
+      "quantity": "1"
+    },
+    {
+      "name": "unsalted butter, cut into pieces and softened at room temperature",
+      "units": "tbs",
+      "quantity": "4",
+      "optionalQuantity": {
+        "quantity": "60",
+        "units": "g"
+      }
+    }
+  ],
+  "optionalIngredients": [
+    {
+      "name": "warm whole milk, plus extra for brushing on the unbaked loaf",
+      "units": "cup",
+      "quantity": ".5",
+      "optionalQuantity": {
+        "quantity": "120",
+        "units": "mL"
+      }
+    },
+    {
+      "name": "extra butter for buttering bowls and pans"
+    }
+  ],
+  "time": "1.5 hours, plus ~3 hours' rising and cooling",
+  "yield": "1 loaf",
+  "directions": [
+    "Make the starter: In a small pot, whisk 1/3 cup flour, milk, and 1/2 cup water (120 mL) together until smooth. Bring to a simmer over medium-low heat and cook, stirring often, until thickened but still pourable, about 10 minutes (it will thicken more as it cools). When it’s ready, the spoon will leave tracks on the bottom of the pot. Scrape into a measuring cup and lightly cover the surface with plastic wrap. Set aside to cool to room temperature. (You will have about 1 cup starter; see note below.)",
+    "Make the dough: In the bowl of a stand mixer fitted with a dough hook, combine the flour, sugar, yeast and salt and mix for a few seconds, just until evenly combined.",
+    "Add egg, milk and ½ cup starter. Turn the mixer on low speed and knead 5 minutes.",
+    "Add soft butter and knead another 10 to 12 minutes (it will take a few minutes for butter to be incorporated), until the dough is smooth and springy and just a bit tacky.",
+    "Lightly butter the inside of a bowl. Use your hands to lift dough out of mixer bowl, shape into a ball and place in prepared bowl. Cover with a kitchen towel and let rise in a warm place until doubled in size, 40 to 60 minutes.",
+    "Punch the dough down and use your hands to scoop it out onto a surface. Using a bench scraper or a large knife, cut dough in half. Lightly form each half into a ball, cover again and let rise 15 minutes.",
+    "Heat the oven to 350 degrees. In the meantime, generously butter a 9-by-5-inch loaf pan.",
+    "Using a rolling pin, gently roll out one dough ball into a thick oval. (By this time, the dough should be moist and no longer sticky. You probably will not need to flour the surface, but you may want to flour the pin.) First roll away from your body, then pull in, until the oval is about 12 inches long and 6 inches across.",
+    "Fold the top 3 inches of the oval down, then fold the bottom 3 inches of the oval up, making a rough square. Starting from the right edge of the square, roll up the dough into a fat log, pick it up and smooth the top with your hands. Place the log in the buttered pan, seam side down and crosswise, nestling it near one end of the pan. Repeat with the other dough ball, placing it near the other end of the pan.",
+    "Cover and let rest 30 to 40 minutes more, until the risen dough is peeking over the edge of the pan and the dough logs are meeting in the center. Brush the tops with milk and bake on the bottom shelf of the oven until golden brown and puffed, 35 to 40 minutes.",
+    "Let cool in the pan 10 minutes, then remove to a wire rack and let cool at least 1 hour, to let the crust soften and keep the crumb lofty. (If cut too soon, the air bubbles trapped in the bread will deflate.)"
+  ],
+  "prepDirections": [
+    "Prepare a stand mixer + mixer bowl",
+    "Prepare a small pot and a spatula for making the starter",
+    "Prepare a large separate bowl for the dough"
+  ],
+  "note": "The starter recipe produces enough to bake 2 loaves, because it’s difficult to cook a smaller amount. Discard the extra starter, or double the dough recipe and bake 2 loaves."
+},
+{
+  "_id": {
+    "$oid": "62ce34f22487d1f846602c87"
+  },
+  "name": "Fava Green Pesto",
+  "source": "Florence Fabricant",
+  "img": "https://www.simplyrecipes.com/thmb/6in8xgRMuVRefXGgLras8D18K98=/1777x1333/smart/filters:no_upscale()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2014__08__Fresh-Basil-Pesto-LEAD-2-d990e7900183450dbddb69628bd8a160.jpg",
+  "diet": "Vegetarian",
+  "allergens": [
+    "Nuts"
+  ],
+  "heat": "None",
+  "tags": [
+    "Sauce/Dip"
+  ],
+  "description": "Pesto, or Pesto alla Genovese, is a sauce originating in Genoa, the capital city of Liguria, Italy. It traditionally consists of crushed garlic, European pine nuts, coarse salt, basil leaves, and hard cheese such as Parmigiano-Reggiano or Pecorino Sardo, all blended with olive oil.",
+  "ingredients": [
+    {
+      "name": "fresh basil leaves (no stems)",
+      "units": "cup",
+      "quantity": "1"
+    },
+    {
+      "name": "fresh fava greens",
+      "units": "cup",
+      "quantity": "1"
+    },
+    {
+      "name": "pine nuts or walnuts, toasted",
+      "units": "tbs",
+      "quantity": "2"
+    },
+    {
+      "name": "large cloves garlic",
+      "quantity": "2"
+    },
+    {
+      "name": "extra-virgin olive oil",
+      "units": "cup",
+      "quantity": ".5"
+    },
+    {
+      "name": "freshly grated parmesan cheese",
+      "units": "cup",
+      "quantity": ".5"
+    }
+  ],
+  "time": "10 minutes",
+  "yield": "2 cups",
+  "directions": [
+    "Combine basil leaves, pine nuts or walnuts, and garlic in a food processor and process until very finely minced.",
+    "With the machine running slowly, dribble in the oil and process until the mixture is smooth.",
+    "Add the cheese and process very briefly, just long enough to combine.",
+    "Store in refrigerator or freezer."
+  ],
+  "prepDirections": [
+    "Prepare a food processor"
+  ]
+}]
